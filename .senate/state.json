@@ -1,9 +1,19 @@
 {
-  "phase": "IDLE",
+  "phase": "IDEA",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
   "speckit_version": "v0.10.1",
+  "idea": "build a birdseye-view retro dungen-crawler RPG game with map being generated as the play progresses",
+  "idea_issue": 1,
   "delta_loops": 0,
-  "sessions": 1
+  "sessions": 1,
+  "history": [
+    {
+      "from": "IDLE",
+      "to": "IDEA",
+      "at": "2026-06-15T19:35:09.52449Z",
+      "note": "idea issue #1"
+    }
+  ]
 }
