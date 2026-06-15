@@ -1,19 +1,195 @@
 {
-  "phase": "IDEA",
+  "phase": "INTERROGATED",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
   "speckit_version": "v0.10.1",
   "idea": "build a birdseye-view retro dungen-crawler RPG game with map being generated as the play progresses",
   "idea_issue": 1,
+  "feature_branch": "001-retro-dungeon-crawler",
+  "feature_dir": "specs/001-retro-dungeon-crawler",
+  "feature_pr": 2,
+  "questionnaire_issue": 3,
+  "dimensions": [
+    {
+      "id": "D1",
+      "title": "Rendering Backend",
+      "stakes": "HIGH",
+      "options": [
+        {
+          "key": "a",
+          "label": "DOM/CSS character grid"
+        },
+        {
+          "key": "b",
+          "label": "HTML5 Canvas with JS-drawn glyphs"
+        }
+      ],
+      "recommendation": "a",
+      "cost_note": "option b is roughly 10x more rendering code: manual glyph metrics, redraw loops, and HUD composition in JS — no user-visible gain for a text-only game",
+      "defer_to_probe": false
+    },
+    {
+      "id": "D2",
+      "title": "Player Leveling Mechanic",
+      "stakes": "HIGH",
+      "options": [
+        {
+          "key": "a",
+          "label": "Level = floor number (display only, no XP system)"
+        },
+        {
+          "key": "b",
+          "label": "XP from kills, level-up grants stat boost"
+        }
+      ],
+      "recommendation": "a",
+      "cost_note": "option b requires inventing XP values, level thresholds, stat-scaling tables, and balance passes — estimated 2–3x scope expansion on the character system",
+      "defer_to_probe": false
+    },
+    {
+      "id": "D3",
+      "title": "Fog-of-War Sight Radius",
+      "stakes": "MED",
+      "options": [
+        {
+          "key": "a",
+          "label": "3 tiles (tight / claustrophobic)"
+        },
+        {
+          "key": "b",
+          "label": "5 tiles (balanced / standard roguelike)"
+        },
+        {
+          "key": "c",
+          "label": "7 tiles (wide / tactical)"
+        }
+      ],
+      "recommendation": "b",
+      "cost_note": "",
+      "defer_to_probe": false
+    },
+    {
+      "id": "D4",
+      "title": "Map Generation Algorithm",
+      "stakes": "HIGH",
+      "options": [
+        {
+          "key": "a",
+          "label": "BSP partitioning (rectangular rooms, connectivity by construction)"
+        },
+        {
+          "key": "b",
+          "label": "Random room placement with nearest-neighbor tunnels"
+        },
+        {
+          "key": "c",
+          "label": "Drunkard's walk / cellular automata (organic caves)"
+        }
+      ],
+      "recommendation": "a",
+      "cost_note": "option c requires a flood-fill connectivity pass after each generation step to satisfy FR-013 — risks generation stalls on bad seeds",
+      "defer_to_probe": false
+    },
+    {
+      "id": "D5",
+      "title": "Victory Condition on Floor 10",
+      "stakes": "MED",
+      "options": [
+        {
+          "key": "a",
+          "label": "Step on staircase tile on floor 10 → victory screen (no floor 11)"
+        },
+        {
+          "key": "b",
+          "label": "Eliminate all enemies on floor 10 → victory screen"
+        },
+        {
+          "key": "c",
+          "label": "Entering floor 10 is itself the win condition"
+        }
+      ],
+      "recommendation": "a",
+      "cost_note": "",
+      "defer_to_probe": false
+    },
+    {
+      "id": "D6",
+      "title": "Combat Feedback Channel",
+      "stakes": "MED",
+      "options": [
+        {
+          "key": "a",
+          "label": "HP bar changes only (numeric, no text)"
+        },
+        {
+          "key": "b",
+          "label": "One-line HUD log per event ('You hit Goblin for 4. Goblin hits for 2.')"
+        }
+      ],
+      "recommendation": "b",
+      "cost_note": "",
+      "defer_to_probe": false
+    },
+    {
+      "id": "D7",
+      "title": "Terminal Color Palette",
+      "stakes": "LOW",
+      "options": [
+        {
+          "key": "a",
+          "label": "Green-on-black (classic terminal)"
+        },
+        {
+          "key": "b",
+          "label": "Amber-on-black (old CRT)"
+        },
+        {
+          "key": "c",
+          "label": "Limited color by entity type (white/red/yellow on black)"
+        },
+        {
+          "key": "d",
+          "label": "White-on-black (print style)"
+        }
+      ],
+      "recommendation": "a",
+      "cost_note": "",
+      "defer_to_probe": true
+    },
+    {
+      "id": "D8",
+      "title": "Enemy Engagement Rule",
+      "stakes": "MED",
+      "options": [
+        {
+          "key": "a",
+          "label": "Adjacency-only: combat on move-onto-adjacent-tile"
+        },
+        {
+          "key": "b",
+          "label": "Room-wide aggro: all room enemies activate on player entry"
+        }
+      ],
+      "recommendation": "a",
+      "cost_note": "option b requires each enemy to track room membership at all times, adding entity state not present in the current entity model",
+      "defer_to_probe": false
+    }
+  ],
   "delta_loops": 0,
-  "sessions": 2,
+  "sessions": 3,
   "history": [
     {
       "from": "IDLE",
       "to": "IDEA",
       "at": "2026-06-15T19:35:09.52449Z",
       "note": "idea issue #1"
+    },
+    {
+      "from": "IDEA",
+      "to": "INTERROGATED",
+      "at": "2026-06-15T19:48:09.997488Z",
+      "note": "questionnaire #3 (8 dims), feature PR #2"
     }
   ]
 }
