@@ -1,5 +1,5 @@
 {
-  "phase": "INTERROGATED",
+  "phase": "VOTED",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -176,8 +176,190 @@
       "defer_to_probe": false
     }
   ],
+  "dim_tallies": [
+    {
+      "dimension": "D1",
+      "title": "Rendering Backend",
+      "stakes": "HIGH",
+      "winner": "a",
+      "winner_label": "DOM/CSS character grid",
+      "weighted_pct": 100,
+      "status": "decided",
+      "by_choice": {
+        "a": 100
+      },
+      "votes": {
+        "alice": "a",
+        "bob": "a",
+        "carol": "a"
+      },
+      "sources": {
+        "alice": "human",
+        "bob": "recommendation",
+        "carol": "recommendation"
+      }
+    },
+    {
+      "dimension": "D2",
+      "title": "Player Leveling Mechanic",
+      "stakes": "HIGH",
+      "winner": "a",
+      "winner_label": "Level = floor number (display only, no XP system)",
+      "weighted_pct": 100,
+      "status": "decided",
+      "by_choice": {
+        "a": 100
+      },
+      "votes": {
+        "alice": "a",
+        "bob": "a",
+        "carol": "a"
+      },
+      "sources": {
+        "alice": "human",
+        "bob": "recommendation",
+        "carol": "recommendation"
+      }
+    },
+    {
+      "dimension": "D3",
+      "title": "Fog-of-War Sight Radius",
+      "stakes": "MED",
+      "winner": "c",
+      "winner_label": "7 tiles (wide / tactical)",
+      "weighted_pct": 50,
+      "status": "conflict",
+      "by_choice": {
+        "a": 30,
+        "b": 20,
+        "c": 50
+      },
+      "votes": {
+        "alice": "c",
+        "bob": "a",
+        "carol": "b"
+      },
+      "sources": {
+        "alice": "proxy",
+        "bob": "proxy",
+        "carol": "proxy"
+      }
+    },
+    {
+      "dimension": "D4",
+      "title": "Map Generation Algorithm",
+      "stakes": "HIGH",
+      "winner": "a",
+      "winner_label": "BSP partitioning (rectangular rooms, connectivity by construction)",
+      "weighted_pct": 100,
+      "status": "decided",
+      "by_choice": {
+        "a": 100
+      },
+      "votes": {
+        "alice": "a",
+        "bob": "a",
+        "carol": "a"
+      },
+      "sources": {
+        "alice": "human",
+        "bob": "recommendation",
+        "carol": "recommendation"
+      }
+    },
+    {
+      "dimension": "D5",
+      "title": "Victory Condition on Floor 10",
+      "stakes": "MED",
+      "winner": "a",
+      "winner_label": "Step on staircase tile on floor 10 → victory screen (no floor 11)",
+      "weighted_pct": 50,
+      "status": "conflict",
+      "by_choice": {
+        "a": 50,
+        "b": 50
+      },
+      "votes": {
+        "alice": "b",
+        "bob": "a",
+        "carol": "a"
+      },
+      "sources": {
+        "alice": "proxy",
+        "bob": "proxy",
+        "carol": "proxy"
+      }
+    },
+    {
+      "dimension": "D6",
+      "title": "Combat Feedback Channel",
+      "stakes": "MED",
+      "winner": "b",
+      "winner_label": "One-line HUD log per event ('You hit Goblin for 4. Goblin hits for 2.')",
+      "weighted_pct": 100,
+      "status": "decided",
+      "by_choice": {
+        "b": 100
+      },
+      "votes": {
+        "alice": "b",
+        "bob": "b",
+        "carol": "b"
+      },
+      "sources": {
+        "alice": "proxy",
+        "bob": "proxy",
+        "carol": "proxy"
+      }
+    },
+    {
+      "dimension": "D7",
+      "title": "Terminal Color Palette",
+      "stakes": "LOW",
+      "winner": "a",
+      "winner_label": "Green-on-black (classic terminal)",
+      "weighted_pct": 100,
+      "status": "deferred",
+      "by_choice": {
+        "a": 100
+      },
+      "votes": {
+        "alice": "a",
+        "bob": "a",
+        "carol": "a"
+      },
+      "sources": {
+        "alice": "recommendation",
+        "bob": "recommendation",
+        "carol": "proxy"
+      }
+    },
+    {
+      "dimension": "D8",
+      "title": "Enemy Engagement Rule",
+      "stakes": "MED",
+      "winner": "a",
+      "winner_label": "Adjacency-only: combat on move-onto-adjacent-tile",
+      "weighted_pct": 50,
+      "status": "conflict",
+      "by_choice": {
+        "a": 50,
+        "b": 50
+      },
+      "votes": {
+        "alice": "b",
+        "bob": "a",
+        "carol": "a"
+      },
+      "sources": {
+        "alice": "proxy",
+        "bob": "proxy",
+        "carol": "proxy"
+      }
+    }
+  ],
   "delta_loops": 0,
-  "sessions": 3,
+  "sessions": 9,
   "history": [
     {
       "from": "IDLE",
@@ -190,6 +372,12 @@
       "to": "INTERROGATED",
       "at": "2026-06-15T19:48:09.997488Z",
       "note": "questionnaire #3 (8 dims), feature PR #2"
+    },
+    {
+      "from": "INTERROGATED",
+      "to": "VOTED",
+      "at": "2026-06-15T21:59:35.871394Z",
+      "note": "8 dims tallied, deferred: D3,D5,D7,D8"
     }
   ]
 }
