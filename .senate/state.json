@@ -1,5 +1,5 @@
 {
-  "phase": "VOTED",
+  "phase": "SPEC_PATCHED",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -358,6 +358,112 @@
       }
     }
   ],
+  "aggregate": {
+    "results": [
+      {
+        "dimension": "D1",
+        "winner": "a",
+        "weighted_pct": 100,
+        "status": "decided"
+      },
+      {
+        "dimension": "D2",
+        "winner": "a",
+        "weighted_pct": 100,
+        "status": "decided"
+      },
+      {
+        "dimension": "D3",
+        "winner": "c",
+        "weighted_pct": 50,
+        "status": "conflict"
+      },
+      {
+        "dimension": "D4",
+        "winner": "a",
+        "weighted_pct": 100,
+        "status": "decided"
+      },
+      {
+        "dimension": "D5",
+        "winner": "a",
+        "weighted_pct": 50,
+        "status": "conflict"
+      },
+      {
+        "dimension": "D6",
+        "winner": "b",
+        "weighted_pct": 100,
+        "status": "decided"
+      },
+      {
+        "dimension": "D7",
+        "winner": "a",
+        "weighted_pct": 100,
+        "status": "deferred"
+      },
+      {
+        "dimension": "D8",
+        "winner": "a",
+        "weighted_pct": 50,
+        "status": "conflict"
+      }
+    ],
+    "clarifications": [
+      {
+        "question": "Rendering Backend",
+        "answer": "DOM/CSS character grid",
+        "weighted_pct": 100,
+        "provenance": "D1"
+      },
+      {
+        "question": "Player Leveling Mechanic",
+        "answer": "Level = floor number (display only, no XP system)",
+        "weighted_pct": 100,
+        "provenance": "D2"
+      },
+      {
+        "question": "Map Generation Algorithm",
+        "answer": "BSP partitioning (rectangular rooms, connectivity by construction)",
+        "weighted_pct": 100,
+        "provenance": "D4"
+      },
+      {
+        "question": "Combat Feedback Channel",
+        "answer": "One-line HUD log per event ('You hit Goblin for 4. Goblin hits you for 2.')",
+        "weighted_pct": 100,
+        "provenance": "D6"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "FR-015",
+        "text": "System MUST render the dungeon using a DOM-based character grid: each tile is an HTML element whose text content is a single glyph character; layout is achieved via CSS grid or flexbox with a fixed cell size; \u003ccanvas\u003e and WebGL are prohibited.",
+        "provenance": "decided: 100% weighted (D1)"
+      },
+      {
+        "id": "FR-016",
+        "text": "System MUST display the player's 'Level' on the HUD as the current floor number (e.g., floor 3 → Level 3); there is no XP accumulation, no level-up event, and no stat change on level increase — the value is display-only.",
+        "provenance": "decided: 100% weighted (D2)"
+      },
+      {
+        "id": "FR-017",
+        "text": "System MUST generate dungeon floors using Binary Space Partitioning (BSP): the floor area is recursively split into axis-aligned partitions, one room is placed per leaf partition, and corridors are carved between sibling partitions to guarantee full connectivity — no post-generation pathfinding or flood-fill correction is required.",
+        "provenance": "decided: 100% weighted (D4)"
+      },
+      {
+        "id": "FR-018",
+        "text": "System MUST display all combat events as one-line messages appended to a persistent HUD log area (e.g., 'You hit Goblin for 4. Goblin hits you for 2.'); each event appends a new line; no modal dialogs, overlays, or canvas-drawn text popups are used for combat feedback.",
+        "provenance": "decided: 100% weighted (D6)"
+      }
+    ],
+    "deferred": [
+      "D3",
+      "D5",
+      "D7",
+      "D8"
+    ]
+  },
   "delta_loops": 0,
   "sessions": 10,
   "history": [
@@ -378,6 +484,12 @@
       "to": "VOTED",
       "at": "2026-06-15T21:59:35.871394Z",
       "note": "8 dims tallied, deferred: D3,D5,D7,D8"
+    },
+    {
+      "from": "VOTED",
+      "to": "SPEC_PATCHED",
+      "at": "2026-06-15T22:04:55.212517Z",
+      "note": "4 clarifications, 4 requirements, deferred: D3,D5,D7,D8"
     }
   ]
 }
