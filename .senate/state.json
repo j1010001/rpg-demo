@@ -1,5 +1,5 @@
 {
-  "phase": "SPEC_PATCHED",
+  "phase": "RATIFIED",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -465,7 +465,7 @@
     ]
   },
   "delta_loops": 0,
-  "sessions": 10,
+  "sessions": 13,
   "history": [
     {
       "from": "IDLE",
@@ -490,6 +490,12 @@
       "to": "SPEC_PATCHED",
       "at": "2026-06-15T22:04:55.212517Z",
       "note": "4 clarifications, 4 requirements, deferred: D3,D5,D7,D8"
+    },
+    {
+      "from": "SPEC_PATCHED",
+      "to": "RATIFIED",
+      "at": "2026-06-15T22:12:12.128439Z",
+      "note": "PR #2 labeled ratified"
     }
   ]
 }
