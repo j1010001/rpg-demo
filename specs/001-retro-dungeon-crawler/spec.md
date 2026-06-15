@@ -169,3 +169,26 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 - No audio in v1; a silent game is acceptable.
 - Inventory cap of 10 items; full inventory silently refuses new pickups with a message in the HUD log.
 - All randomness is seeded per run from the session start; reproducibility within a run is desirable but not required.
+
+## Clarifications
+
+- **Rendering Backend** → DOM/CSS character grid (100% weighted, D1)
+- **Player Leveling Mechanic** → Level = floor number (display only, no XP system) (100% weighted, D2)
+- **Map Generation Algorithm** → BSP partitioning (rectangular rooms, connectivity by construction) (100% weighted, D4)
+- **Combat Feedback Channel** → One-line HUD log per event ('You hit Goblin for 4. Goblin hits you for 2.') (100% weighted, D6)
+
+## Requirements
+
+- FR-015: System MUST render the dungeon using a DOM-based character grid: each tile is an HTML element whose text content is a single glyph character; layout is achieved via CSS grid or flexbox with a fixed cell size; <canvas> and WebGL are prohibited. — *provenance: decided: 100% weighted (D1)*
+- FR-016: System MUST display the player's 'Level' on the HUD as the current floor number (e.g., floor 3 → Level 3); there is no XP accumulation, no level-up event, and no stat change on level increase — the value is display-only. — *provenance: decided: 100% weighted (D2)*
+- FR-017: System MUST generate dungeon floors using Binary Space Partitioning (BSP): the floor area is recursively split into axis-aligned partitions, one room is placed per leaf partition, and corridors are carved between sibling partitions to guarantee full connectivity — no post-generation pathfinding or flood-fill correction is required. — *provenance: decided: 100% weighted (D4)*
+- FR-018: System MUST display all combat events as one-line messages appended to a persistent HUD log area (e.g., 'You hit Goblin for 4. Goblin hits you for 2.'); each event appends a new line; no modal dialogs, overlays, or canvas-drawn text popups are used for combat feedback. — *provenance: decided: 100% weighted (D6)*
+
+## Deferred to Probe
+
+These dimensions are **intentionally deferred**: the group reacts to the deployed probe instead of predicting from text.
+
+- D3 — Fog-of-War Sight Radius (a: 3 tiles (tight / claustrophobic) · b: 5 tiles (balanced / standard roguelike) · c: 7 tiles (wide / tactical))
+- D5 — Victory Condition on Floor 10 (a: Step on staircase tile on floor 10 → victory screen (no floor 11) · b: Eliminate all enemies on floor 10 → victory screen · c: Entering floor 10 is itself the win condition)
+- D7 — Terminal Color Palette (a: Green-on-black (classic terminal) · b: Amber-on-black (old CRT) · c: Limited color by entity type (white/red/yellow on black) · d: White-on-black (print style))
+- D8 — Enemy Engagement Rule (a: Adjacency-only: combat on move-onto-adjacent-tile · b: Room-wide aggro: all room enemies activate on player entry)
