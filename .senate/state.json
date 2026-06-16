@@ -620,8 +620,8 @@
       "issue": 37,
       "pr": 38,
       "branch": "task/T019",
-      "status": "halted",
-      "review_cycles": 2,
+      "status": "in_review",
+      "review_cycles": 0,
       "worker_runs": 2
     }
   },
