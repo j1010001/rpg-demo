@@ -38,7 +38,7 @@ Build a browser-based top-down roguelike RPG with procedural BSP dungeon generat
 | II. Minimal Escalation | No escalation needed | PASS | No ambiguity blocking implementation; D3/D5/D7/D8 deferred by design |
 | III. Deployable Probe First | Probe must ship before full implementation | PASS | Phase 0 milestone = probe (map render + movement + BSP generation) |
 | IV. Static-First Stack | HTML/CSS/vanilla JS only; no build step, no backend | PASS | FR-014 mandates this; FR-015 prohibits canvas; all FRs align |
-| V. Requirement Provenance | All FRs carry `Decided by` blocks | PASS | FR-001 through FR-018 all have provenance; deferred dimensions documented |
+| V. Requirement Provenance | All FRs carry compliant `Decided by / Weight / Date` blocks | PASS | FR-001 through FR-018 all carry compliant provenance; FR-015–018 provenance format corrected 2026-06-16; deferred dimensions documented |
 | VI. Spec-Arbitrated Review | Reviewers arbitrate against spec only | PASS | Plan does not introduce undocumented constraints |
 
 **Post-Design Re-check**: No violations introduced in Phase 1 design (see data-model.md, contracts/).

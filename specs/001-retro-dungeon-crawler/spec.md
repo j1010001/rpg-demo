@@ -81,7 +81,7 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 
 ### Edge Cases
 
-- What happens when the player attempts to move outside the generated dungeon boundary before new tiles are ready? Movement is blocked until generation completes (synchronous generation per step).
+- What happens when the player attempts to move into a wall or outside the dungeon boundary? Movement is blocked — `Dungeon.isWalkable` returns false and no position change occurs.
 - How does the system handle an inventory that is full when the player steps on an item? The item remains on the floor; the player receives a notification that inventory is full.
 - What happens if a player is surrounded by enemies with no viable escape? Combat continues turn-by-turn until the player dies or uses a consumable to break out.
 - What happens if random generation produces a disconnected room with no path to stairs? The generation algorithm guarantees all rooms are connected via corridors.
@@ -96,7 +96,7 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 - **FR-001**: System MUST render the dungeon as a top-down, grid-based map where each cell is a tile (wall, floor, door, staircase, or empty/fog).
   > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
 
-- **FR-002**: System MUST procedurally generate new dungeon rooms and corridors as the player moves into unexplored areas, extending the map on demand rather than pre-generating the entire floor upfront.
+- **FR-002**: System MUST reveal dungeon rooms via fog-of-war as the player moves, using pre-generated BSP floor data — the exploration effect is achieved through fog, not incremental generation; the entire floor is generated at floor entry.
   > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
 
 - **FR-003**: System MUST apply a fog-of-war mechanic: tiles the player has never visited are hidden; tiles within a defined sight radius of the player are visible; tiles previously visited but outside sight radius are dimmed (seen but not actively lit).
@@ -126,7 +126,7 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 - **FR-011**: System MUST place one staircase tile per floor that, when stepped on, generates a new deeper floor and transitions the player to it with their current inventory and stats.
   > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
 
-- **FR-012**: System MUST render all game visuals using a retro aesthetic: monochrome or limited color palette with ASCII glyphs or simple tile characters for all entities (e.g., `@` for player, `g` for goblin, `#` for wall, `.` for floor).
+- **FR-012**: System MUST render all game visuals using a retro aesthetic: monochrome or limited color palette with ASCII glyphs or simple tile characters for all entities (e.g., `@` for player, `g` for goblin, `#` for wall, `.` for floor). The default entity-color palette (one distinct color per entity type) satisfies the "limited color" branch; the "monochrome" branch (white-on-black) is satisfied only if D7 resolves to white-on-black.
   > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
 
 - **FR-013**: System MUST guarantee all generated rooms on a floor are reachable from the player's starting position via corridors.
@@ -163,7 +163,7 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 - Turn-based movement and combat: game state only advances when the player takes an action (moves or attacks).
 - Keyboard-only controls; no mouse interaction required for core gameplay.
 - Retro aesthetic means ASCII-style character glyphs on a dark background — no sprite images, no external art assets. All rendering is done in-browser via DOM or `<canvas>`.
-- Map generation per step: when the player approaches an unexplored boundary, the next room/corridor is generated synchronously so there is no loading state or delay.
+- BSP generation per floor entry: the entire floor (all rooms, corridors, stairs) is generated via BSP at the moment the player enters the floor — synchronously, with no loading state. Fog-of-war then reveals tiles progressively as the player moves, creating the appearance of incremental exploration.
 - Enemy AI is simple line-of-sight pursuit: enemies move one tile per turn toward the player if within a defined sight range, otherwise remain stationary.
 - Maximum floor depth is 10; on surviving floor 10 the player wins and a victory screen is shown.
 - No audio in v1; a silent game is acceptable.
@@ -179,10 +179,17 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 
 ## Requirements
 
-- FR-015: System MUST render the dungeon using a DOM-based character grid: each tile is an HTML element whose text content is a single glyph character; layout is achieved via CSS grid or flexbox with a fixed cell size; <canvas> and WebGL are prohibited. — *provenance: decided: 100% weighted (D1)*
-- FR-016: System MUST display the player's 'Level' on the HUD as the current floor number (e.g., floor 3 → Level 3); there is no XP accumulation, no level-up event, and no stat change on level increase — the value is display-only. — *provenance: decided: 100% weighted (D2)*
-- FR-017: System MUST generate dungeon floors using Binary Space Partitioning (BSP): the floor area is recursively split into axis-aligned partitions, one room is placed per leaf partition, and corridors are carved between sibling partitions to guarantee full connectivity — no post-generation pathfinding or flood-fill correction is required. — *provenance: decided: 100% weighted (D4)*
-- FR-018: System MUST display all combat events as one-line messages appended to a persistent HUD log area (e.g., 'You hit Goblin for 4. Goblin hits you for 2.'); each event appends a new line; no modal dialogs, overlays, or canvas-drawn text popups are used for combat feedback. — *provenance: decided: 100% weighted (D6)*
+- **FR-015**: System MUST render the dungeon using a DOM-based character grid: each tile is an HTML element whose text content is a single glyph character; layout is achieved via CSS grid or flexbox with a fixed cell size; `<canvas>` and WebGL are prohibited.
+  > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
+
+- **FR-016**: System MUST display the player's 'Level' on the HUD as the current floor number (e.g., floor 3 → Level 3); there is no XP accumulation, no level-up event, and no stat change on level increase — the value is display-only.
+  > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
+
+- **FR-017**: System MUST generate dungeon floors using Binary Space Partitioning (BSP): the floor area is recursively split into axis-aligned partitions, one room is placed per leaf partition, and corridors are carved between sibling partitions to guarantee full connectivity — no post-generation pathfinding or flood-fill correction is required.
+  > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
+
+- **FR-018**: System MUST display all combat events as one-line messages appended to a persistent HUD log area (e.g., 'You hit Goblin for 4. Goblin hits you for 2.'); each event appends a new line; no modal dialogs, overlays, or canvas-drawn text popups are used for combat feedback.
+  > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
 
 ## Deferred to Probe
 
