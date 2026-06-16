@@ -70,3 +70,8 @@ senate run: phase BUILDING
 15:53:05  worker:T013            session 45 started
 15:54:44  worker:T013            session 45 finished (1m39s)
 15:54:44  worker:T013            done with no file changes (validation task)
+15:54:45  dispatcher             T013 no code changes (validation task) — checkbox ticked in tasks.md
+15:54:50  dispatcher             T014 dispatched: issue #31, worktree task/T014
+15:54:50  worker:T014            session 46 started
+15:55:38  worker:T014            session 46 finished (48s)
+15:55:38  worker:T014            done with no file changes (validation task)
