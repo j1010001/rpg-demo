@@ -99,17 +99,6 @@ const Dungeon = (() => {
 
     const dungeon = { tiles, rooms, width: W, height: H, stairPos: { x: stairX, y: stairY } };
 
-    if (typeof window !== 'undefined' && window.GameState) {
-      window.GameState.dungeon = dungeon;
-    }
-
-    if (typeof Enemy !== 'undefined' && Enemy.placeForFloor) {
-      Enemy.placeForFloor(dungeon, floor);
-    }
-    if (typeof Items !== 'undefined' && Items.placeForFloor) {
-      Items.placeForFloor(dungeon, floor);
-    }
-
     return dungeon;
   }
 

@@ -17,6 +17,14 @@ function initGame() {
   GameState.dungeon = Dungeon.generate(GameState.config, 1);
   GameState.player = Player.init(GameState.dungeon.rooms[0]);
 
+  GameState.enemies = [];
+  if (typeof Enemy !== 'undefined' && Enemy.placeForFloor) {
+    Enemy.placeForFloor(GameState.dungeon, GameState.player.floor);
+  }
+  if (typeof Items !== 'undefined' && Items.placeForFloor) {
+    Items.placeForFloor(GameState.dungeon, GameState.player.floor);
+  }
+
   FOV.compute(GameState);
   Renderer.init(GameState.config);
   Renderer.render(GameState);
