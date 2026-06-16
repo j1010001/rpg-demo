@@ -520,7 +520,7 @@
       "id": "T007",
       "issue": 22,
       "branch": "task/T007",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
