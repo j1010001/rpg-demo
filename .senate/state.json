@@ -1,5 +1,5 @@
 {
-  "phase": "PLANNED",
+  "phase": "ANALYZED",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -496,6 +496,12 @@
       "to": "RATIFIED",
       "at": "2026-06-15T22:12:12.128439Z",
       "note": "PR #2 labeled ratified"
+    },
+    {
+      "from": "PLANNED",
+      "to": "ANALYZED",
+      "at": "2026-06-16T16:17:23.899415Z",
+      "note": "analyze passed"
     }
   ]
 }
