@@ -27,3 +27,8 @@ senate run: phase BUILDING
 15:25:10  reviewer:T006          session 36 started
 15:25:42  reviewer:T006          session 36 finished (32s)
 15:25:43  reviewer:T006          verdict on PR #21: approve
+15:25:48  dispatcher             T006 merged (PR #21) — checkbox ticked in tasks.md
+15:25:53  dispatcher             T007 dispatched: issue #22, worktree task/T007
+15:25:53  worker:T007            session 37 started
+15:27:19  worker:T007            session 37 finished (1m26s)
+15:27:19  worker:T007            done with no file changes (validation task)
