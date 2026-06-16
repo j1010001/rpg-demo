@@ -470,7 +470,7 @@
       "id": "T001",
       "issue": 4,
       "branch": "task/T001",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
