@@ -116,8 +116,8 @@
 **Purpose**: Edge case robustness, browser compatibility verification, aesthetic polish, final success criteria validation.
 
 - [ ] T032 [P] Verify all CSS tile classes in `style.css` match render-contract.md color defaults: `.tile-hidden` black bg no glyph; `.tile-seen` dim `#2a2a2a`; `.tile-wall` `#888`; `.tile-floor` `#444`; `.tile-player` `#0f0`; `.tile-enemy-goblin` `#f00`; `.tile-enemy-orc` `#f60`; `.tile-enemy-troll` `#f0f`; `.tile-item` `#ff0`; `.tile-stair_down` `#0ff`
-- [ ] T033 Test full-inventory edge case in browser: fill inventory to 10 items, step on an 11th item tile; confirm item stays on floor, HUD log appends "Inventory full.", and no crash or silent failure occurs
-- [ ] T034 Test boundary movement edge case in browser: move player to dungeon border (row 0, row 49, col 0, col 79); confirm `Dungeon.isWalkable` blocks movement, player position does not change, no `undefined` array access or console error
+- [ ] T033 Validate full-inventory edge case in `index.html` via `js/items.js`: fill inventory to 10 items, step on an 11th item tile; confirm item stays on floor, HUD log appends "Inventory full.", and no crash or silent failure occurs
+- [ ] T034 Validate boundary movement in `index.html` via `js/dungeon.js` and `js/player.js`: move player to dungeon border (row 0, row 49, col 0, col 79); confirm `Dungeon.isWalkable` blocks movement, player position does not change, no `undefined` array access or console error
 - [ ] T035 [P] Run full quickstart.md success criteria checklist SC-001 through SC-006; document pass/fail for each criterion
 - [ ] T036 [P] Open `index.html` via `file://` in Chrome 90+, Firefox 88+, and Safari 14+; confirm no browser-specific console errors and all gameplay features work correctly per FR-014
 
