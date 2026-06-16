@@ -466,6 +466,14 @@
   },
   "delta_loops": 0,
   "tasks": {
+    "T001": {
+      "id": "T001",
+      "issue": 16,
+      "branch": "task/T001",
+      "status": "pending",
+      "review_cycles": 0,
+      "worker_runs": 1
+    },
     "T004": {
       "id": "T004",
       "issue": 7,
@@ -476,7 +484,7 @@
       "worker_runs": 1
     }
   },
-  "sessions": 30,
+  "sessions": 31,
   "history": [
     {
       "from": "IDLE",
