@@ -481,9 +481,17 @@
       "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
+    },
+    "T003": {
+      "id": "T003",
+      "issue": 6,
+      "branch": "task/T003",
+      "status": "pending",
+      "review_cycles": 0,
+      "worker_runs": 1
     }
   },
-  "sessions": 20,
+  "sessions": 21,
   "history": [
     {
       "from": "IDLE",
