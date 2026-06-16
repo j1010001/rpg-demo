@@ -478,7 +478,7 @@
       "id": "T002",
       "issue": 17,
       "branch": "task/T002",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     },
