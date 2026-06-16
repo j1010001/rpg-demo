@@ -51,3 +51,12 @@ senate run: phase BUILDING
 15:38:24  reviewer:T010          session 41 started
 15:41:23  reviewer:T010          session 41 finished (2m59s)
 15:41:24  reviewer:T010          verdict on PR #26: approve
+15:41:30  dispatcher             T010 merged (PR #26) — checkbox ticked in tasks.md
+15:41:34  dispatcher             T011 dispatched: issue #27, worktree task/T011
+15:41:34  worker:T011            session 42 started
+15:43:40  worker:T011            session 42 finished (2m6s)
+15:43:40  worker:T011            done: commits on task/T011, ready for review
+15:43:44  dispatcher             T011 PR #28 opened into 001-retro-dungeon-crawler
+15:43:45  reviewer:T011          session 43 started
+15:44:59  reviewer:T011          session 43 finished (1m14s)
+15:45:01  reviewer:T011          verdict on PR #28: approve

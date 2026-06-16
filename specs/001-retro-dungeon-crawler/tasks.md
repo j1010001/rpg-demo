@@ -52,7 +52,7 @@
 
 **Independent Test**: Open `index.html`; move through the dungeon; confirm all 4 scenarios from quickstart.md "User Story 1 — Dungeon Exploration" section pass manually.
 
-- [ ] T011 [US1] Verify stair tile `>` is placed in last room by `Dungeon.generate` (T004) and renders in cyan when LIT; stepping onto it must not crash (no activation logic yet — that is US4)
+- [x] T011 [US1] Verify stair tile `>` is placed in last room by `Dungeon.generate` (T004) and renders in cyan when LIT; stepping onto it must not crash (no activation logic yet — that is US4)
 - [ ] T012 [US1] Run quickstart.md User Story 1 validation: Scenario 1 (starting visibility), Scenario 2 (map expands on movement), Scenario 3 (visited tiles persist as SEEN), Scenario 4 (wall collision blocks); confirm SC-001 (map expands per step) and SC-002 (≥8 rooms) by visual inspection or `console.log(GameState.dungeon.rooms.length)`
 
 **Checkpoint**: User Story 1 is fully functional and independently testable
