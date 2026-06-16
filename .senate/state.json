@@ -506,9 +506,18 @@
       "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
+    },
+    "T006": {
+      "id": "T006",
+      "issue": 20,
+      "pr": 21,
+      "branch": "task/T006",
+      "status": "in_review",
+      "review_cycles": 0,
+      "worker_runs": 1
     }
   },
-  "sessions": 34,
+  "sessions": 36,
   "history": [
     {
       "from": "IDLE",
