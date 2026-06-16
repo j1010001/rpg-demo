@@ -466,30 +466,6 @@
   },
   "delta_loops": 0,
   "tasks": {
-    "T001": {
-      "id": "T001",
-      "issue": 4,
-      "branch": "task/T001",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T002": {
-      "id": "T002",
-      "issue": 5,
-      "branch": "task/T002",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T003": {
-      "id": "T003",
-      "issue": 6,
-      "branch": "task/T003",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
     "T004": {
       "id": "T004",
       "issue": 7,
@@ -498,49 +474,9 @@
       "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
-    },
-    "T005": {
-      "id": "T005",
-      "issue": 9,
-      "branch": "task/T005",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T006": {
-      "id": "T006",
-      "issue": 10,
-      "branch": "task/T006",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T007": {
-      "id": "T007",
-      "issue": 11,
-      "branch": "task/T007",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T008": {
-      "id": "T008",
-      "issue": 12,
-      "branch": "task/T008",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T009": {
-      "id": "T009",
-      "issue": 13,
-      "branch": "task/T009",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
     }
   },
-  "sessions": 28,
+  "sessions": 30,
   "history": [
     {
       "from": "IDLE",
