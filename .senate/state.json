@@ -503,7 +503,7 @@
       "id": "T005",
       "issue": 9,
       "branch": "task/T005",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
