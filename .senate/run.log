@@ -75,3 +75,12 @@ senate run: phase BUILDING
 15:54:50  worker:T014            session 46 started
 15:55:38  worker:T014            session 46 finished (48s)
 15:55:38  worker:T014            done with no file changes (validation task)
+15:55:40  dispatcher             T014 no code changes (validation task) — checkbox ticked in tasks.md
+15:55:44  dispatcher             T015 dispatched: issue #32, worktree task/T015
+15:55:44  worker:T015            session 47 started
+15:57:43  worker:T015            session 47 finished (1m59s)
+15:57:43  worker:T015            done: commits on task/T015, ready for review
+15:57:46  dispatcher             T015 PR #33 opened into 001-retro-dungeon-crawler
+15:57:47  reviewer:T015          session 48 started
+15:58:16  reviewer:T015          session 48 finished (29s)
+15:58:17  reviewer:T015          verdict on PR #33: approve
