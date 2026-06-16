@@ -99,3 +99,25 @@ senate run: phase BUILDING
 16:01:46  worker:T018            session 51 started
 16:03:06  worker:T018            session 51 finished (1m20s)
 16:03:06  worker:T018            done with no file changes (validation task)
+16:03:08  dispatcher             T018 no code changes (validation task) — checkbox ticked in tasks.md
+16:03:12  dispatcher             T019 dispatched: issue #37, worktree task/T019
+16:03:12  worker:T019            session 52 started
+16:03:48  worker:T019            session 52 finished (36s)
+16:03:48  worker:T019            done: commits on task/T019, ready for review
+16:03:52  dispatcher             T019 PR #38 opened into 001-retro-dungeon-crawler
+16:03:53  reviewer:T019          session 53 started
+16:04:08  reviewer:T019          session 53 finished (15s)
+16:04:09  reviewer:T019          verdict on PR #38: request_changes
+16:04:10  worker:T019            session 54 started
+16:06:27  worker:T019            session 54 finished (2m17s)
+16:06:27  worker:T019            done: commits on task/T019, ready for review
+16:06:28  reviewer:T019          session 55 started
+16:06:49  reviewer:T019          session 55 finished (21s)
+senate: agent reviewer:T019 output failed JSON contract (invalid JSON in trailing block: json: cannot unmarshal object into Go struct field ReviewerOut.changes_requested of type string); retrying once
+16:06:49  reviewer:T019          session 56 started
+16:07:07  reviewer:T019          session 56 finished (18s)
+16:07:08  reviewer:T019          verdict on PR #38: request_changes
+senate: task T019: reviewer requested changes 2 times on PR #38 — halting for a human
+16:32:43  reviewer:T019          session 57 started
+16:33:58  reviewer:T019          session 57 finished (1m15s)
+16:33:59  reviewer:T019          verdict on PR #38: approve
