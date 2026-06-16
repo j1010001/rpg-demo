@@ -511,7 +511,7 @@
       "id": "T006",
       "issue": 10,
       "branch": "task/T006",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
