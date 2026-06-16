@@ -562,7 +562,7 @@
       "id": "T012",
       "issue": 29,
       "branch": "task/T012",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
