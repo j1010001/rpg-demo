@@ -131,3 +131,8 @@ senate: task T019: reviewer requested changes 2 times on PR #38 — halting for 
 16:39:29  worker:T021            session 59 started
 16:41:06  worker:T021            session 59 finished (1m36s)
 16:41:06  worker:T021            done with no file changes (validation task)
+16:41:07  dispatcher             T021 no code changes (validation task) — checkbox ticked in tasks.md
+16:41:12  dispatcher             T022 dispatched: issue #41, worktree task/T022
+16:41:12  worker:T022            session 60 started
+16:43:08  worker:T022            session 60 finished (1m56s)
+16:43:08  worker:T022            done with no file changes (validation task)
