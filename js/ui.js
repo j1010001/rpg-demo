@@ -16,6 +16,7 @@ const UI = (() => {
     logEl.scrollTop = logEl.scrollHeight;
   }
 
+  // FR-008: game-over overlay with floor/enemies stats and R-to-restart (T019).
   function showGameOver(gameState) {
     const { player } = gameState;
     const overlay = document.getElementById('overlay');
