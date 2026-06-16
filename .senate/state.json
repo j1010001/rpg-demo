@@ -1,5 +1,5 @@
 {
-  "phase": "ANALYZED",
+  "phase": "BUILDING",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -502,6 +502,12 @@
       "to": "ANALYZED",
       "at": "2026-06-16T16:17:23.899415Z",
       "note": "analyze passed"
+    },
+    {
+      "from": "ANALYZED",
+      "to": "BUILDING",
+      "at": "2026-06-16T16:17:23.94626Z",
+      "note": "dispatch started"
     }
   ]
 }
