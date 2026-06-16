@@ -486,7 +486,7 @@
       "id": "T003",
       "issue": 18,
       "branch": "task/T003",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     },
