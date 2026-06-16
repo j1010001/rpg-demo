@@ -565,9 +565,17 @@
       "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
+    },
+    "T013": {
+      "id": "T013",
+      "issue": 30,
+      "branch": "task/T013",
+      "status": "pending",
+      "review_cycles": 0,
+      "worker_runs": 1
     }
   },
-  "sessions": 44,
+  "sessions": 45,
   "history": [
     {
       "from": "IDLE",
