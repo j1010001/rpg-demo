@@ -663,9 +663,17 @@
       "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
+    },
+    "T025": {
+      "id": "T025",
+      "issue": 44,
+      "branch": "task/T025",
+      "status": "pending",
+      "review_cycles": 0,
+      "worker_runs": 1
     }
   },
-  "sessions": 62,
+  "sessions": 63,
   "history": [
     {
       "from": "IDLE",
