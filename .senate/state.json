@@ -527,7 +527,7 @@
       "id": "T008",
       "issue": 12,
       "branch": "task/T008",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
