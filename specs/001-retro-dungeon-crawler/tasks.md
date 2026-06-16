@@ -72,7 +72,7 @@
 - [x] T017 [US2] Update `js/game.js`: after `Player.move`, call `processEnemyPhase(gameState)` — iterate `GameState.enemies`, call `Enemy.ai(enemy, gameState)` for each alive enemy, then filter out dead enemies (`GameState.enemies = GameState.enemies.filter(e => e.alive)`); after enemy phase, check `GameState.player.hp <= 0` → set `GameState.phase = 'GAME_OVER'` and call `UI.showGameOver(GameState)`; skip further render if phase is GAME_OVER
 - [x] T018 [US2] Update `js/renderer.js`: in `Renderer.render`, LIT tile entity check — if `tile.entity` is an enemy object (has `.glyph` and `.alive === true`): set `textContent = tile.entity.glyph`, `className = 'tile-enemy-' + tile.entity.type.toLowerCase()`; this overrides floor tile rendering per render-contract.md priority order
 - [x] T019 [P] [US2] Implement `UI.showGameOver(gameState)` in `js/ui.js`: remove `display:none` from `#overlay`; set inner HTML to "GAME OVER", `"Floor reached: \(player.floor)"`, `"Enemies defeated: \(player.enemiesDefeated)"`, `"[R] Restart"`; add one-time `keydown` listener: if key `r`/`R` → `window.location.reload()`
-- [ ] T020 [US2] Validate US2 acceptance scenarios 1–5 from quickstart.md: enemy visible when room is LIT; bump-attack deals damage and logs message; enemy counterattacks and logs message; player death shows game-over overlay with correct stats; enemy removal on death clears tile glyph
+- [x] T020 [US2] Validate US2 acceptance scenarios 1–5 from quickstart.md: enemy visible when room is LIT; bump-attack deals damage and logs message; enemy counterattacks and logs message; player death shows game-over overlay with correct stats; enemy removal on death clears tile glyph
 
 **Checkpoint**: User Story 2 is fully functional and independently testable
 

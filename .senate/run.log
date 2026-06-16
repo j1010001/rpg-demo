@@ -121,3 +121,8 @@ senate: task T019: reviewer requested changes 2 times on PR #38 — halting for 
 16:32:43  reviewer:T019          session 57 started
 16:33:58  reviewer:T019          session 57 finished (1m15s)
 16:33:59  reviewer:T019          verdict on PR #38: approve
+16:34:05  dispatcher             T019 merged (PR #38) — checkbox ticked in tasks.md
+16:34:10  dispatcher             T020 dispatched: issue #39, worktree task/T020
+16:34:10  worker:T020            session 58 started
+16:39:23  worker:T020            session 58 finished (5m13s)
+16:39:23  worker:T020            done with no file changes (validation task)
