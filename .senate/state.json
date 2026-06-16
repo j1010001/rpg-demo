@@ -679,9 +679,18 @@
       "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
+    },
+    "T027": {
+      "id": "T027",
+      "issue": 46,
+      "pr": 47,
+      "branch": "task/T027",
+      "status": "in_review",
+      "review_cycles": 0,
+      "worker_runs": 1
     }
   },
-  "sessions": 64,
+  "sessions": 66,
   "history": [
     {
       "from": "IDLE",

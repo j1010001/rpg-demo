@@ -156,3 +156,12 @@ senate: task T019: reviewer requested changes 2 times on PR #38 — halting for 
 16:48:06  worker:T026            session 64 started
 16:51:06  worker:T026            session 64 finished (3m0s)
 16:51:06  worker:T026            done with no file changes (validation task)
+16:51:08  dispatcher             T026 no code changes (validation task) — checkbox ticked in tasks.md
+16:51:12  dispatcher             T027 dispatched: issue #46, worktree task/T027
+16:51:12  worker:T027            session 65 started
+16:54:15  worker:T027            session 65 finished (3m3s)
+16:54:15  worker:T027            done: commits on task/T027, ready for review
+16:54:18  dispatcher             T027 PR #47 opened into 001-retro-dungeon-crawler
+16:54:19  reviewer:T027          session 66 started
+16:54:59  reviewer:T027          session 66 finished (40s)
+16:55:00  reviewer:T027          verdict on PR #47: approve
