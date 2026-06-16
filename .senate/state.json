@@ -660,7 +660,7 @@
       "id": "T024",
       "issue": 43,
       "branch": "task/T024",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
