@@ -144,6 +144,36 @@ body {
   background: #000;
 }
 
+/* Inventory panel */
+#inventory {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  border: 1px solid #0f0;
+  padding: 16px 24px;
+  color: #0f0;
+  min-width: 280px;
+  z-index: 50;
+  line-height: 1.8;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+.inventory-title {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.inventory-hint {
+  margin-top: 12px;
+  color: #888;
+  font-size: 11px;
+}
+
 /* Overlay (game over / victory) */
 #overlay {
   display: none;
