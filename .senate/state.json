@@ -755,6 +755,15 @@
       "review_cycles": 0,
       "worker_runs": 1
     },
+    "T027": {
+      "id": "T027",
+      "issue": 80,
+      "pr": 81,
+      "branch": "task/T027",
+      "status": "halted",
+      "review_cycles": 2,
+      "worker_runs": 2
+    },
     "T030": {
       "id": "T030",
       "issue": 50,
@@ -804,7 +813,7 @@
       "worker_runs": 1
     }
   },
-  "sessions": 98,
+  "sessions": 104,
   "history": [
     {
       "from": "IDLE",
