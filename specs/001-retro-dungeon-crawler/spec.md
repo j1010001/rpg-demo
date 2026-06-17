@@ -176,6 +176,11 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 - **Player Leveling Mechanic** → Level = floor number (display only, no XP system) (100% weighted, D2)
 - **Map Generation Algorithm** → BSP partitioning (rectangular rooms, connectivity by construction) (100% weighted, D4)
 - **Combat Feedback Channel** → One-line HUD log per event ('You hit Goblin for 4. Goblin hits you for 2.') (100% weighted, D6)
+- **Fog-of-War Sight Radius** → 5 tiles (balanced / standard roguelike) (100% weighted, D3)
+- **Victory Condition on Floor 10** → Entering floor 10 is itself the win condition (100% weighted, D5)
+- **Terminal Color Palette** → Green-on-black (classic terminal) (100% weighted, D7)
+- **Enemy Engagement Rule** → Room-wide aggro: all room enemies activate on player entry (100% weighted, D8)
+
 
 ## Requirements
 
@@ -190,6 +195,11 @@ Once the player has sufficiently explored a floor or found the staircase, they c
 
 - **FR-018**: System MUST display all combat events as one-line messages appended to a persistent HUD log area (e.g., 'You hit Goblin for 4. Goblin hits you for 2.'); each event appends a new line; no modal dialogs, overlays, or canvas-drawn text popups are used for combat feedback.
   > Decided by: Jan Bernatik (Product Owner) | Weight: 100% | Date: 2026-06-15
+- R100: System MUST apply a fog-of-war sight radius of exactly 5 tiles: tiles within a Chebyshev (or equivalent grid) distance of 5 from the player's current position are fully lit; tiles beyond distance 5 that have been previously visited are rendered dimmed; tiles beyond distance 5 that have never been visited remain hidden. — *provenance: probe: 100% weighted (D3)*
+- R101: System MUST trigger the victory screen immediately when the player enters floor 10 — no additional action (staircase step, enemy elimination) is required; entering floor 10 is itself the win condition; no floor 11 is ever generated. — *provenance: probe: 100% weighted (D5)*
+- R102: System MUST render all game visuals — tile glyphs, entity characters, HUD text, and log messages — in green (CSS color #00ff00 or the closest terminal-green equivalent) on a black (#000000) background; no other foreground colors are permitted for any game element, superseding the multi-color clause in FR-012. — *provenance: probe: 100% weighted (D7)*
+- R103: System MUST activate all enemies present in a room simultaneously the moment the player's position tile belongs to that room: every enemy in the room begins pursuing and attacking the player on each subsequent turn; enemies do NOT require adjacency or line-of-sight to activate — room entry is the sole trigger. — *provenance: probe: 100% weighted (D8)*
+
 
 ## Deferred to Probe
 
