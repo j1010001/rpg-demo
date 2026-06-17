@@ -1,5 +1,5 @@
 {
-  "phase": "BUILDING",
+  "phase": "BUILT",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -972,6 +972,12 @@
       "to": "BUILDING",
       "at": "2026-06-17T15:55:10.465955Z",
       "note": "dispatch started"
+    },
+    {
+      "from": "BUILDING",
+      "to": "BUILT",
+      "at": "2026-06-17T16:13:33.020399Z",
+      "note": "all tasks merged"
     }
   ]
 }
