@@ -119,7 +119,7 @@
 - [x] T033 Validate full-inventory edge case in `index.html` via `js/items.js`: fill inventory to 10 items, step on an 11th item tile; confirm item stays on floor, HUD log appends "Inventory full.", and no crash or silent failure occurs
 - [x] T034 Validate boundary movement in `index.html` via `js/dungeon.js` and `js/player.js`: move player to dungeon border (row 0, row 49, col 0, col 79); confirm `Dungeon.isWalkable` blocks movement, player position does not change, no `undefined` array access or console error
 - [x] T035 [P] Run full quickstart.md success criteria checklist SC-001 through SC-006; document pass/fail for each criterion
-- [ ] T036 [P] Open `index.html` via `file://` in Chrome 90+, Firefox 88+, and Safari 14+; confirm no browser-specific console errors and all gameplay features work correctly per FR-014
+- [x] T036 [P] Open `index.html` via `file://` in Chrome 90+, Firefox 88+, and Safari 14+; confirm no browser-specific console errors and all gameplay features work correctly per FR-014
 - [ ] T037 [P] Add persistent `#legend` element to `index.html` and `style.css`: fixed position (bottom-left), low opacity (0.6), retro monochrome styling matching HUD; content: controls section (WASD / ↑↓←→ = move, I = inventory, R = restart) and objective section (find `>` to descend, survive to floor 10); validates SC-006 (new player identifies objective within 60 seconds from visual cues alone without external instructions)
 
 ---
