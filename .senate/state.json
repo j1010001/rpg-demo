@@ -1,5 +1,5 @@
 {
-  "phase": "BUILT",
+  "phase": "PROBE_LIVE",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -464,6 +464,8 @@
       "D8"
     ]
   },
+  "feedback_issue": 58,
+  "probe_url": "https://j1010001.github.io/rpg-demo/",
   "delta_loops": 0,
   "tasks": {
     "T001": {
@@ -819,6 +821,12 @@
       "to": "BUILT",
       "at": "2026-06-17T00:20:44.206334Z",
       "note": "all tasks merged"
+    },
+    {
+      "from": "BUILT",
+      "to": "PROBE_LIVE",
+      "at": "2026-06-17T12:31:01.578051Z",
+      "note": "probe live at https://j1010001.github.io/rpg-demo/, feedback issue #58"
     }
   ]
 }
