@@ -44,6 +44,13 @@ const Player = (() => {
       if (FOV.update) FOV.update(gameState);
       if (FOV.compute) FOV.compute(gameState);
     }
+
+    const tile = Dungeon.getTile(gameState.dungeon, nx, ny);
+    if (tile && tile.type === TILE_TYPES.ITEM_GROUND) {
+      if (typeof Items !== 'undefined' && Items.pickup) {
+        Items.pickup(tile.entity, gameState);
+      }
+    }
   }
 
   return { init, move, totalAttack, totalDefense };
