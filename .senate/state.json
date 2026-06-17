@@ -709,7 +709,7 @@
       "id": "T030",
       "issue": 50,
       "branch": "task/T030",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
     }
