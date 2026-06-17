@@ -43,7 +43,7 @@ body {
 #hud-log {
   max-height: 64px;
   overflow-y: auto;
-  color: #888;
+  color: #00ff00;
   font-size: 11px;
   line-height: 1.4;
 }
@@ -87,60 +87,60 @@ body {
 }
 
 .tile-seen {
-  color: #2a2a2a;
+  color: #006600;
   background: #000;
 }
 
-/* Lit tile types */
+/* Lit tile types — R102: all foreground #00ff00 (green-on-black) */
 .tile-wall {
-  color: #888;
+  color: #00ff00;
   background: #000;
 }
 
 .tile-floor {
-  color: #444;
+  color: #00ff00;
   background: #000;
 }
 
 .tile-door {
-  color: #a86;
+  color: #00ff00;
   background: #000;
 }
 
 .tile-stair_down {
-  color: #0ff;
+  color: #00ff00;
   background: #000;
 }
 
 .tile-item_ground {
-  color: #ff0;
+  color: #00ff00;
   background: #000;
 }
 
-/* Entities */
+/* Entities — R102: all foreground #00ff00 */
 .tile-player {
-  color: #0f0;
+  color: #00ff00;
   background: #000;
   font-weight: bold;
 }
 
 .tile-enemy-goblin {
-  color: #f00;
+  color: #00ff00;
   background: #000;
 }
 
 .tile-enemy-orc {
-  color: #f60;
+  color: #00ff00;
   background: #000;
 }
 
 .tile-enemy-troll {
-  color: #f0f;
+  color: #00ff00;
   background: #000;
 }
 
 .tile-item {
-  color: #ff0;
+  color: #00ff00;
   background: #000;
 }
 
@@ -172,6 +172,6 @@ body {
 
 .overlay-hint {
   margin-top: 16px;
-  color: #888;
+  color: #00ff00;
   font-size: 12px;
 }

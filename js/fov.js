@@ -17,7 +17,7 @@ const FOV = (() => {
 
     for (let dy = -r; dy <= r; dy++) {
       for (let dx = -r; dx <= r; dx++) {
-        if (dx * dx + dy * dy > r * r) continue;
+        if (Math.max(Math.abs(dx), Math.abs(dy)) > r) continue;
         const tx = px + dx, ty = py + dy;
         if (tx < 0 || tx >= dungeon.width || ty < 0 || ty >= dungeon.height) continue;
 

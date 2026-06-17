@@ -23,8 +23,18 @@ const Player = (() => {
 
     if (!Dungeon.isWalkable(gameState.dungeon, nx, ny)) return;
 
+    const targetTile = Dungeon.getTile(gameState.dungeon, nx, ny);
+    if (targetTile && targetTile.entity && targetTile.entity.alive) {
+      Combat.playerAttack(targetTile.entity, gameState);
+      return;
+    }
+
     player.x = nx;
     player.y = ny;
+
+    if (targetTile && targetTile.type === 'ITEM_GROUND' && targetTile.entity) {
+      Items.pickup(targetTile.entity, targetTile, gameState);
+    }
 
     if (typeof FOV !== 'undefined') {
       if (FOV.update) FOV.update(gameState);
