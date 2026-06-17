@@ -1,5 +1,5 @@
 const Enemy = (() => {
-  function makeEnemy(type, x, y, floor) {
+  function makeEnemy(type, x, y, floor, roomId) {
     return {
       type,
       x,
@@ -9,8 +9,8 @@ const Enemy = (() => {
       maxHp: BASE_HP[type] + floor * HP_SCALE[type],
       attack: BASE_ATT[type] + floor * ATT_SCALE[type],
       alive: true,
-      activated: false,
-      sightRange: CONFIG.enemySightRange
+      roomId,
+      active: false
     };
   }
 
@@ -37,28 +37,11 @@ const Enemy = (() => {
           const tile = dungeon.tiles[y] && dungeon.tiles[y][x];
           if (tile && tile.type === 'FLOOR' && !tile.entity) {
             const type = typeForFloor(floor);
-            const enemy = makeEnemy(type, x, y, floor);
+            const enemy = makeEnemy(type, x, y, floor, room.id);
             tile.entity = enemy;
             GameState.enemies.push(enemy);
             break;
           }
-        }
-      }
-    }
-  }
-
-  // R103: activate all enemies in the room the player currently occupies.
-  function activateRoomEnemies(gameState) {
-    const { player, enemies, dungeon } = gameState;
-    for (const room of dungeon.rooms) {
-      const inRoom = player.x >= room.x && player.x < room.x + room.width &&
-                     player.y >= room.y && player.y < room.y + room.height;
-      if (!inRoom) continue;
-      for (const enemy of enemies) {
-        if (!enemy.alive || enemy.activated) continue;
-        if (enemy.x >= room.x && enemy.x < room.x + room.width &&
-            enemy.y >= room.y && enemy.y < room.y + room.height) {
-          enemy.activated = true;
         }
       }
     }
@@ -79,7 +62,7 @@ const Enemy = (() => {
   }
 
   function ai(enemy, gameState) {
-    if (!enemy.alive || !enemy.activated) return;
+    if (!enemy.alive || !enemy.active) return;
     const { player, dungeon } = gameState;
     const dx = player.x - enemy.x;
     const dy = player.y - enemy.y;
@@ -101,5 +84,5 @@ const Enemy = (() => {
     }
   }
 
-  return { placeForFloor, ai, activateRoomEnemies };
+  return { placeForFloor, ai };
 })();

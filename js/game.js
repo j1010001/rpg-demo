@@ -32,9 +32,21 @@ function initGame() {
   UI.render(GameState);
 }
 
+function activateRoomEnemies(gameState) {
+  const { player, enemies, dungeon } = gameState;
+  for (const room of dungeon.rooms) {
+    const inRoom = player.x >= room.x && player.x < room.x + room.width &&
+                   player.y >= room.y && player.y < room.y + room.height;
+    if (!inRoom) continue;
+    for (const enemy of enemies) {
+      if (enemy.roomId === room.id) enemy.active = true;
+    }
+    break;
+  }
+}
+
 function processEnemyPhase(gameState) {
   if (typeof Enemy === 'undefined') return;
-  Enemy.activateRoomEnemies(gameState);
   const snapshot = [...gameState.enemies];
   for (const enemy of snapshot) {
     if (enemy.alive) Enemy.ai(enemy, gameState);
@@ -111,6 +123,8 @@ document.addEventListener('keydown', (e) => {
 
   e.preventDefault();
   Player.move(delta[0], delta[1], GameState);
+
+  activateRoomEnemies(GameState);
 
   if (typeof processEnemyPhase === 'function') {
     processEnemyPhase(GameState);

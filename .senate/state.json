@@ -866,13 +866,16 @@
     },
     "T040": {
       "id": "T040",
-      "status": "pending",
+      "issue": 105,
+      "pr": 106,
+      "branch": "task/T040",
+      "status": "merged",
       "review_cycles": 0,
-      "worker_runs": 0
+      "worker_runs": 1
     },
     "T041": {
       "id": "T041",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 0
     },
@@ -889,7 +892,7 @@
       "worker_runs": 0
     }
   },
-  "sessions": 143,
+  "sessions": 145,
   "history": [
     {
       "from": "IDLE",
