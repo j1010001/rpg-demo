@@ -30,7 +30,24 @@ const Player = (() => {
       if (FOV.update) FOV.update(gameState);
       if (FOV.compute) FOV.compute(gameState);
     }
+
+    const tile = Dungeon.getTile(gameState.dungeon, nx, ny);
+    if (tile && tile.type === TILE_TYPES.ITEM_GROUND) {
+      if (typeof Items !== 'undefined' && Items.pickup) {
+        Items.pickup(tile.entity, gameState);
+      }
+    }
   }
 
-  return { init, move };
+  function totalAttack(gameState) {
+    const player = gameState.player;
+    return player.attack + (player.equippedWeapon ? player.equippedWeapon.effectValue : 0);
+  }
+
+  function totalDefense(gameState) {
+    const player = gameState.player;
+    return player.defense + (player.equippedArmor ? player.equippedArmor.effectValue : 0);
+  }
+
+  return { init, move, totalAttack, totalDefense };
 })();
