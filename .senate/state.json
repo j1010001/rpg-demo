@@ -698,6 +698,15 @@
       "review_cycles": 0,
       "worker_runs": 2
     },
+    "T020": {
+      "id": "T020",
+      "issue": 70,
+      "pr": 71,
+      "branch": "task/T020",
+      "status": "in_review",
+      "review_cycles": 0,
+      "worker_runs": 1
+    },
     "T030": {
       "id": "T030",
       "issue": 50,
@@ -747,7 +756,7 @@
       "worker_runs": 1
     }
   },
-  "sessions": 90,
+  "sessions": 92,
   "history": [
     {
       "from": "IDLE",
