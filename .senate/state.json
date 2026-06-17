@@ -854,9 +854,12 @@
     },
     "T039": {
       "id": "T039",
-      "status": "pending",
+      "issue": 101,
+      "pr": 102,
+      "branch": "task/T039",
+      "status": "in_review",
       "review_cycles": 0,
-      "worker_runs": 0
+      "worker_runs": 1
     },
     "T040": {
       "id": "T040",
@@ -883,7 +886,7 @@
       "worker_runs": 0
     }
   },
-  "sessions": 137,
+  "sessions": 139,
   "history": [
     {
       "from": "IDLE",
