@@ -696,9 +696,17 @@
       "status": "merged",
       "review_cycles": 0,
       "worker_runs": 1
+    },
+    "T029": {
+      "id": "T029",
+      "issue": 49,
+      "branch": "task/T029",
+      "status": "pending",
+      "review_cycles": 0,
+      "worker_runs": 1
     }
   },
-  "sessions": 67,
+  "sessions": 68,
   "history": [
     {
       "from": "IDLE",
