@@ -1,0 +1,207 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000000;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* HUD */
+#hud {
+  flex-shrink: 0;
+  background: #111;
+  border-bottom: 1px solid #333;
+  padding: 4px 8px;
+}
+
+#hud-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+#hud-stats span {
+  color: #00ff00;
+  white-space: nowrap;
+}
+
+#hud-log {
+  max-height: 64px;
+  overflow-y: auto;
+  color: #00ff00;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+#hud-log div {
+  white-space: nowrap;
+}
+
+/* Viewport */
+#viewport {
+  flex: 1;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+/* Dungeon grid */
+#dungeon {
+  display: grid;
+  font-size: 13px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 14px;
+  width: max-content;
+  cursor: default;
+  user-select: none;
+}
+
+#dungeon span {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  line-height: 14px;
+  overflow: hidden;
+}
+
+/* Tile visibility states */
+.tile-hidden {
+  color: #000;
+  background: #000;
+}
+
+.tile-seen {
+  color: #006600;
+  background: #000;
+}
+
+/* Lit tile types */
+.tile-wall {
+  color: #00ff00;
+  background: #000;
+}
+
+.tile-floor {
+  color: #00ff00;
+  background: #000;
+}
+
+.tile-door {
+  color: #00ff00;
+  background: #000;
+}
+
+.tile-stair_down {
+  color: #00ff00;
+  background: #000;
+}
+
+.tile-item_ground {
+  color: #00ff00;
+  background: #000;
+}
+
+/* Entities */
+.tile-player {
+  color: #00ff00;
+  background: #000;
+  font-weight: bold;
+}
+
+.tile-enemy-goblin {
+  color: #00ff00;
+  background: #000;
+}
+
+.tile-enemy-orc {
+  color: #00ff00;
+  background: #000;
+}
+
+.tile-enemy-troll {
+  color: #00ff00;
+  background: #000;
+}
+
+.tile-item {
+  color: #00ff00;
+  background: #000;
+}
+
+/* Inventory panel */
+#inventory {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  border: 1px solid #0f0;
+  padding: 16px 24px;
+  color: #0f0;
+  min-width: 280px;
+  z-index: 50;
+  line-height: 1.8;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+.inventory-title {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.inventory-hint {
+  margin-top: 12px;
+  color: #00ff00;
+  font-size: 11px;
+}
+
+/* Overlay (game over / victory) */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.overlay-content {
+  border: 1px solid #00ff00;
+  padding: 32px 48px;
+  text-align: center;
+  color: #00ff00;
+  line-height: 2;
+}
+
+.overlay-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  letter-spacing: 4px;
+}
+
+.overlay-hint {
+  margin-top: 16px;
+  color: #00ff00;
+  font-size: 12px;
+}

@@ -1,0 +1,219 @@
+senate run: phase BUILDING
+15:16:36  dispatcher             T001 dispatched: issue #16, worktree task/T001
+15:16:36  worker:T001            session 31 started
+15:17:55  worker:T001            session 31 finished (1m19s)
+15:17:55  worker:T001            done with no file changes (validation task)
+15:17:56  dispatcher             T001 no code changes (validation task) — checkbox ticked in tasks.md
+15:18:02  dispatcher             T002 dispatched: issue #17, worktree task/T002
+15:18:02  worker:T002            session 32 started
+15:20:58  worker:T002            session 32 finished (2m56s)
+15:20:58  worker:T002            done with no file changes (validation task)
+15:21:00  dispatcher             T002 no code changes (validation task) — checkbox ticked in tasks.md
+15:21:04  dispatcher             T003 dispatched: issue #18, worktree task/T003
+15:21:04  worker:T003            session 33 started
+15:21:53  worker:T003            session 33 finished (48s)
+15:21:53  worker:T003            done with no file changes (validation task)
+15:21:54  dispatcher             T003 no code changes (validation task) — checkbox ticked in tasks.md
+15:21:59  dispatcher             T005 dispatched: issue #19, worktree task/T005
+15:21:59  worker:T005            session 34 started
+15:23:52  worker:T005            session 34 finished (1m53s)
+15:23:52  worker:T005            done with no file changes (validation task)
+15:23:54  dispatcher             T005 no code changes (validation task) — checkbox ticked in tasks.md
+15:23:58  dispatcher             T006 dispatched: issue #20, worktree task/T006
+15:23:58  worker:T006            session 35 started
+15:25:05  worker:T006            session 35 finished (1m7s)
+15:25:05  worker:T006            done: commits on task/T006, ready for review
+15:25:09  dispatcher             T006 PR #21 opened into 001-retro-dungeon-crawler
+15:25:10  reviewer:T006          session 36 started
+15:25:42  reviewer:T006          session 36 finished (32s)
+15:25:43  reviewer:T006          verdict on PR #21: approve
+15:25:48  dispatcher             T006 merged (PR #21) — checkbox ticked in tasks.md
+15:25:53  dispatcher             T007 dispatched: issue #22, worktree task/T007
+15:25:53  worker:T007            session 37 started
+15:27:19  worker:T007            session 37 finished (1m26s)
+15:27:19  worker:T007            done with no file changes (validation task)
+15:27:20  dispatcher             T007 no code changes (validation task) — checkbox ticked in tasks.md
+15:27:25  dispatcher             T008 dispatched: issue #23, worktree task/T008
+15:27:25  worker:T008            session 38 started
+15:29:09  worker:T008            session 38 finished (1m44s)
+15:29:09  worker:T008            done with no file changes (validation task)
+15:29:11  dispatcher             T008 no code changes (validation task) — checkbox ticked in tasks.md
+15:29:16  dispatcher             T009 dispatched: issue #24, worktree task/T009
+15:29:16  worker:T009            session 39 started
+15:31:23  worker:T009            session 39 finished (2m7s)
+15:31:23  worker:T009            done with no file changes (validation task)
+15:31:25  dispatcher             T009 no code changes (validation task) — checkbox ticked in tasks.md
+15:31:29  dispatcher             T010 dispatched: issue #25, worktree task/T010
+15:31:29  worker:T010            session 40 started
+15:38:19  worker:T010            session 40 finished (6m51s)
+15:38:19  worker:T010            done: commits on task/T010, ready for review
+15:38:23  dispatcher             T010 PR #26 opened into 001-retro-dungeon-crawler
+15:38:24  reviewer:T010          session 41 started
+15:41:23  reviewer:T010          session 41 finished (2m59s)
+15:41:24  reviewer:T010          verdict on PR #26: approve
+15:41:30  dispatcher             T010 merged (PR #26) — checkbox ticked in tasks.md
+15:41:34  dispatcher             T011 dispatched: issue #27, worktree task/T011
+15:41:34  worker:T011            session 42 started
+15:43:40  worker:T011            session 42 finished (2m6s)
+15:43:40  worker:T011            done: commits on task/T011, ready for review
+15:43:44  dispatcher             T011 PR #28 opened into 001-retro-dungeon-crawler
+15:43:45  reviewer:T011          session 43 started
+15:44:59  reviewer:T011          session 43 finished (1m14s)
+15:45:01  reviewer:T011          verdict on PR #28: approve
+15:45:07  dispatcher             T011 merged (PR #28) — checkbox ticked in tasks.md
+15:45:12  dispatcher             T012 dispatched: issue #29, worktree task/T012
+15:45:12  worker:T012            session 44 started
+15:52:59  worker:T012            session 44 finished (7m47s)
+15:52:59  worker:T012            done with no file changes (validation task)
+15:53:01  dispatcher             T012 no code changes (validation task) — checkbox ticked in tasks.md
+15:53:05  dispatcher             T013 dispatched: issue #30, worktree task/T013
+15:53:05  worker:T013            session 45 started
+15:54:44  worker:T013            session 45 finished (1m39s)
+15:54:44  worker:T013            done with no file changes (validation task)
+15:54:45  dispatcher             T013 no code changes (validation task) — checkbox ticked in tasks.md
+15:54:50  dispatcher             T014 dispatched: issue #31, worktree task/T014
+15:54:50  worker:T014            session 46 started
+15:55:38  worker:T014            session 46 finished (48s)
+15:55:38  worker:T014            done with no file changes (validation task)
+15:55:40  dispatcher             T014 no code changes (validation task) — checkbox ticked in tasks.md
+15:55:44  dispatcher             T015 dispatched: issue #32, worktree task/T015
+15:55:44  worker:T015            session 47 started
+15:57:43  worker:T015            session 47 finished (1m59s)
+15:57:43  worker:T015            done: commits on task/T015, ready for review
+15:57:46  dispatcher             T015 PR #33 opened into 001-retro-dungeon-crawler
+15:57:47  reviewer:T015          session 48 started
+15:58:16  reviewer:T015          session 48 finished (29s)
+15:58:17  reviewer:T015          verdict on PR #33: approve
+15:58:23  dispatcher             T015 merged (PR #33) — checkbox ticked in tasks.md
+15:58:27  dispatcher             T016 dispatched: issue #34, worktree task/T016
+15:58:27  worker:T016            session 49 started
+16:00:00  worker:T016            session 49 finished (1m33s)
+16:00:00  worker:T016            done with no file changes (validation task)
+16:00:01  dispatcher             T016 no code changes (validation task) — checkbox ticked in tasks.md
+16:00:06  dispatcher             T017 dispatched: issue #35, worktree task/T017
+16:00:06  worker:T017            session 50 started
+16:01:40  worker:T017            session 50 finished (1m34s)
+16:01:40  worker:T017            done with no file changes (validation task)
+16:01:42  dispatcher             T017 no code changes (validation task) — checkbox ticked in tasks.md
+16:01:46  dispatcher             T018 dispatched: issue #36, worktree task/T018
+16:01:46  worker:T018            session 51 started
+16:03:06  worker:T018            session 51 finished (1m20s)
+16:03:06  worker:T018            done with no file changes (validation task)
+16:03:08  dispatcher             T018 no code changes (validation task) — checkbox ticked in tasks.md
+16:03:12  dispatcher             T019 dispatched: issue #37, worktree task/T019
+16:03:12  worker:T019            session 52 started
+16:03:48  worker:T019            session 52 finished (36s)
+16:03:48  worker:T019            done: commits on task/T019, ready for review
+16:03:52  dispatcher             T019 PR #38 opened into 001-retro-dungeon-crawler
+16:03:53  reviewer:T019          session 53 started
+16:04:08  reviewer:T019          session 53 finished (15s)
+16:04:09  reviewer:T019          verdict on PR #38: request_changes
+16:04:10  worker:T019            session 54 started
+16:06:27  worker:T019            session 54 finished (2m17s)
+16:06:27  worker:T019            done: commits on task/T019, ready for review
+16:06:28  reviewer:T019          session 55 started
+16:06:49  reviewer:T019          session 55 finished (21s)
+senate: agent reviewer:T019 output failed JSON contract (invalid JSON in trailing block: json: cannot unmarshal object into Go struct field ReviewerOut.changes_requested of type string); retrying once
+16:06:49  reviewer:T019          session 56 started
+16:07:07  reviewer:T019          session 56 finished (18s)
+16:07:08  reviewer:T019          verdict on PR #38: request_changes
+senate: task T019: reviewer requested changes 2 times on PR #38 — halting for a human
+16:32:43  reviewer:T019          session 57 started
+16:33:58  reviewer:T019          session 57 finished (1m15s)
+16:33:59  reviewer:T019          verdict on PR #38: approve
+16:34:05  dispatcher             T019 merged (PR #38) — checkbox ticked in tasks.md
+16:34:10  dispatcher             T020 dispatched: issue #39, worktree task/T020
+16:34:10  worker:T020            session 58 started
+16:39:23  worker:T020            session 58 finished (5m13s)
+16:39:23  worker:T020            done with no file changes (validation task)
+16:39:25  dispatcher             T020 no code changes (validation task) — checkbox ticked in tasks.md
+16:39:29  dispatcher             T021 dispatched: issue #40, worktree task/T021
+16:39:29  worker:T021            session 59 started
+16:41:06  worker:T021            session 59 finished (1m36s)
+16:41:06  worker:T021            done with no file changes (validation task)
+16:41:07  dispatcher             T021 no code changes (validation task) — checkbox ticked in tasks.md
+16:41:12  dispatcher             T022 dispatched: issue #41, worktree task/T022
+16:41:12  worker:T022            session 60 started
+16:43:08  worker:T022            session 60 finished (1m56s)
+16:43:08  worker:T022            done with no file changes (validation task)
+16:43:10  dispatcher             T022 no code changes (validation task) — checkbox ticked in tasks.md
+16:43:14  dispatcher             T023 dispatched: issue #42, worktree task/T023
+16:43:14  worker:T023            session 61 started
+16:44:46  worker:T023            session 61 finished (1m31s)
+16:44:46  worker:T023            done with no file changes (validation task)
+16:44:48  dispatcher             T023 no code changes (validation task) — checkbox ticked in tasks.md
+16:44:52  dispatcher             T024 dispatched: issue #43, worktree task/T024
+16:44:52  worker:T024            session 62 started
+16:45:48  worker:T024            session 62 finished (56s)
+16:45:48  worker:T024            done with no file changes (validation task)
+16:45:50  dispatcher             T024 no code changes (validation task) — checkbox ticked in tasks.md
+16:45:54  dispatcher             T025 dispatched: issue #44, worktree task/T025
+16:45:54  worker:T025            session 63 started
+16:48:00  worker:T025            session 63 finished (2m6s)
+16:48:00  worker:T025            done with no file changes (validation task)
+16:48:02  dispatcher             T025 no code changes (validation task) — checkbox ticked in tasks.md
+16:48:06  dispatcher             T026 dispatched: issue #45, worktree task/T026
+16:48:06  worker:T026            session 64 started
+16:51:06  worker:T026            session 64 finished (3m0s)
+16:51:06  worker:T026            done with no file changes (validation task)
+16:51:08  dispatcher             T026 no code changes (validation task) — checkbox ticked in tasks.md
+16:51:12  dispatcher             T027 dispatched: issue #46, worktree task/T027
+16:51:12  worker:T027            session 65 started
+16:54:15  worker:T027            session 65 finished (3m3s)
+16:54:15  worker:T027            done: commits on task/T027, ready for review
+16:54:18  dispatcher             T027 PR #47 opened into 001-retro-dungeon-crawler
+16:54:19  reviewer:T027          session 66 started
+16:54:59  reviewer:T027          session 66 finished (40s)
+16:55:00  reviewer:T027          verdict on PR #47: approve
+16:55:06  dispatcher             T027 merged (PR #47) — checkbox ticked in tasks.md
+16:55:10  dispatcher             T028 dispatched: issue #48, worktree task/T028
+16:55:10  worker:T028            session 67 started
+16:56:18  worker:T028            session 67 finished (1m8s)
+16:56:18  worker:T028            done with no file changes (validation task)
+16:56:19  dispatcher             T028 no code changes (validation task) — checkbox ticked in tasks.md
+16:56:24  dispatcher             T029 dispatched: issue #49, worktree task/T029
+16:56:24  worker:T029            session 68 started
+17:04:58  worker:T029            session 68 finished (8m34s)
+17:04:58  worker:T029            done with no file changes (validation task)
+17:04:59  dispatcher             T029 no code changes (validation task) — checkbox ticked in tasks.md
+17:05:04  dispatcher             T030 dispatched: issue #50, worktree task/T030
+17:05:04  worker:T030            session 69 started
+17:05:15  worker:T030            session 69 finished (11s)
+17:05:15  worker:T030            done with no file changes (validation task)
+17:05:17  dispatcher             T030 no code changes (validation task) — checkbox ticked in tasks.md
+17:05:21  dispatcher             T031 dispatched: issue #51, worktree task/T031
+17:05:21  worker:T031            session 70 started
+17:07:48  worker:T031            session 70 finished (2m27s)
+17:07:48  worker:T031            done with no file changes (validation task)
+17:07:50  dispatcher             T031 no code changes (validation task) — checkbox ticked in tasks.md
+17:07:54  dispatcher             T032 dispatched: issue #52, worktree task/T032
+17:07:54  worker:T032            session 71 started
+17:08:24  worker:T032            session 71 finished (30s)
+17:08:24  worker:T032            done with no file changes (validation task)
+17:08:26  dispatcher             T032 no code changes (validation task) — checkbox ticked in tasks.md
+17:08:30  dispatcher             T033 dispatched: issue #53, worktree task/T033
+17:08:30  worker:T033            session 72 started
+17:12:45  worker:T033            session 72 finished (4m15s)
+17:12:45  worker:T033            done with no file changes (validation task)
+17:12:47  dispatcher             T033 no code changes (validation task) — checkbox ticked in tasks.md
+17:12:51  dispatcher             T034 dispatched: issue #54, worktree task/T034
+17:12:52  worker:T034            session 73 started
+17:13:54  worker:T034            session 73 finished (1m3s)
+17:13:54  worker:T034            done with no file changes (validation task)
+17:13:56  dispatcher             T034 no code changes (validation task) — checkbox ticked in tasks.md
+17:14:01  dispatcher             T035 dispatched: issue #55, worktree task/T035
+17:14:01  worker:T035            session 74 started
+17:16:05  worker:T035            session 74 finished (2m4s)
+17:16:05  worker:T035            done with no file changes (validation task)
+17:16:06  dispatcher             T035 no code changes (validation task) — checkbox ticked in tasks.md
+17:16:11  dispatcher             T036 dispatched: issue #56, worktree task/T036
+17:16:11  worker:T036            session 75 started
+17:19:46  worker:T036            session 75 finished (3m35s)
+17:19:46  worker:T036            done with no file changes (validation task)
+17:19:48  dispatcher             T036 no code changes (validation task) — checkbox ticked in tasks.md
+17:19:52  dispatcher             T037 dispatched: issue #57, worktree task/T037
+17:19:52  worker:T037            session 76 started
+17:20:39  worker:T037            session 76 finished (47s)
+17:20:39  worker:T037            done with no file changes (validation task)
+17:20:40  dispatcher             T037 no code changes (validation task) — checkbox ticked in tasks.md
+17:20:44  dispatcher             all tasks merged into 001-retro-dungeon-crawler
