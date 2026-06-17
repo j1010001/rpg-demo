@@ -41,6 +41,28 @@ const KEY_MAP = {
 document.addEventListener('keydown', (e) => {
   if (GameState.phase !== 'PLAYING') return;
 
+  if (e.key === 'i' || e.key === 'I') {
+    e.preventDefault();
+    if (typeof UI.toggleInventory === 'function') UI.toggleInventory();
+    return;
+  }
+
+  const slotIndex = '1234567890'.indexOf(e.key);
+  if (slotIndex !== -1) {
+    e.preventDefault();
+    const item = GameState.player.inventory[slotIndex];
+    if (item && typeof Items !== 'undefined') {
+      if (item.type === 'POTION') {
+        Items.usePotion(slotIndex, GameState);
+      } else if (item.type === 'WEAPON' || item.type === 'ARMOR') {
+        Items.equipItem(slotIndex, GameState);
+      }
+      Renderer.render(GameState);
+      UI.render(GameState);
+    }
+    return;
+  }
+
   const delta = KEY_MAP[e.key];
   if (!delta) return;
 
