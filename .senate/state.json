@@ -1,5 +1,5 @@
 {
-  "phase": "FEEDBACK",
+  "phase": "DELTA",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -462,7 +462,7 @@
   },
   "feedback_issue": 58,
   "probe_url": "https://j1010001.github.io/rpg-demo/",
-  "delta_loops": 0,
+  "delta_loops": 1,
   "delta_aggregate": {
     "results": [
       {
@@ -906,6 +906,12 @@
       "to": "FEEDBACK",
       "at": "2026-06-17T12:53:39.282096Z",
       "note": "round 1: 4 delta requirements"
+    },
+    {
+      "from": "FEEDBACK",
+      "to": "DELTA",
+      "at": "2026-06-17T15:47:53.418256Z",
+      "note": "delta loop 1/2"
     }
   ]
 }
