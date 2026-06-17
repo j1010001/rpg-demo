@@ -41,14 +41,14 @@ const KEY_MAP = {
 function descend(gameState) {
   const { player, config } = gameState;
 
+  player.floor++;
+  player.level = player.floor;
+
   if (player.floor >= config.maxFloors) {
     gameState.phase = 'VICTORY';
     UI.showVictory(gameState);
     return;
   }
-
-  player.floor++;
-  player.level = player.floor;
 
   gameState.dungeon = Dungeon.generate(config, player.floor);
   gameState.enemies = [];
