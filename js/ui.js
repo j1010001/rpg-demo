@@ -59,5 +59,28 @@ const UI = (() => {
     document.addEventListener('keydown', handler);
   }
 
-  return { render, showGameOver, showVictory };
+  function renderInventory(gameState) {
+    const { player } = gameState;
+    const list = document.getElementById('inventory-list');
+    list.innerHTML = '';
+    if (player.inventory.length === 0) {
+      const div = document.createElement('div');
+      div.textContent = '(empty)';
+      list.appendChild(div);
+    } else {
+      player.inventory.forEach((item, i) => {
+        const isEquipped = item === player.equippedWeapon || item === player.equippedArmor;
+        const div = document.createElement('div');
+        div.textContent = `${i + 1}: ${item.name} (${item.type}, +${item.effect})${isEquipped ? ' [E]' : ''}`;
+        list.appendChild(div);
+      });
+    }
+  }
+
+  function toggleInventory() {
+    const el = document.getElementById('inventory');
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+
+  return { render, showGameOver, showVictory, renderInventory, toggleInventory };
 })();
