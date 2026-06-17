@@ -26,7 +26,7 @@
         }
       ],
       "recommendation": "a",
-      "cost_note": "option b is roughly 10x more rendering code: manual glyph metrics, redraw loops, and HUD composition in JS — no user-visible gain for a text-only game",
+      "cost_note": "option b is roughly 10x more rendering code: manual glyph metrics, redraw loops, and HUD composition in JS \u2014 no user-visible gain for a text-only game",
       "defer_to_probe": false
     },
     {
@@ -44,7 +44,7 @@
         }
       ],
       "recommendation": "a",
-      "cost_note": "option b requires inventing XP values, level thresholds, stat-scaling tables, and balance passes — estimated 2–3x scope expansion on the character system",
+      "cost_note": "option b requires inventing XP values, level thresholds, stat-scaling tables, and balance passes \u2014 estimated 2\u20133x scope expansion on the character system",
       "defer_to_probe": false
     },
     {
@@ -88,7 +88,7 @@
         }
       ],
       "recommendation": "a",
-      "cost_note": "option c requires a flood-fill connectivity pass after each generation step to satisfy FR-013 — risks generation stalls on bad seeds",
+      "cost_note": "option c requires a flood-fill connectivity pass after each generation step to satisfy FR-013 \u2014 risks generation stalls on bad seeds",
       "defer_to_probe": false
     },
     {
@@ -98,11 +98,11 @@
       "options": [
         {
           "key": "a",
-          "label": "Step on staircase tile on floor 10 → victory screen (no floor 11)"
+          "label": "Step on staircase tile on floor 10 \u2192 victory screen (no floor 11)"
         },
         {
           "key": "b",
-          "label": "Eliminate all enemies on floor 10 → victory screen"
+          "label": "Eliminate all enemies on floor 10 \u2192 victory screen"
         },
         {
           "key": "c",
@@ -434,17 +434,17 @@
     "requirements": [
       {
         "id": "FR-015",
-        "text": "System MUST render the dungeon using a DOM-based character grid: each tile is an HTML element whose text content is a single glyph character; layout is achieved via CSS grid or flexbox with a fixed cell size; \u003ccanvas\u003e and WebGL are prohibited.",
+        "text": "System MUST render the dungeon using a DOM-based character grid: each tile is an HTML element whose text content is a single glyph character; layout is achieved via CSS grid or flexbox with a fixed cell size; <canvas> and WebGL are prohibited.",
         "provenance": "decided: 100% weighted (D1)"
       },
       {
         "id": "FR-016",
-        "text": "System MUST display the player's 'Level' on the HUD as the current floor number (e.g., floor 3 → Level 3); there is no XP accumulation, no level-up event, and no stat change on level increase — the value is display-only.",
+        "text": "System MUST display the player's 'Level' on the HUD as the current floor number (e.g., floor 3 \u2192 Level 3); there is no XP accumulation, no level-up event, and no stat change on level increase \u2014 the value is display-only.",
         "provenance": "decided: 100% weighted (D2)"
       },
       {
         "id": "FR-017",
-        "text": "System MUST generate dungeon floors using Binary Space Partitioning (BSP): the floor area is recursively split into axis-aligned partitions, one room is placed per leaf partition, and corridors are carved between sibling partitions to guarantee full connectivity — no post-generation pathfinding or flood-fill correction is required.",
+        "text": "System MUST generate dungeon floors using Binary Space Partitioning (BSP): the floor area is recursively split into axis-aligned partitions, one room is placed per leaf partition, and corridors are carved between sibling partitions to guarantee full connectivity \u2014 no post-generation pathfinding or flood-fill correction is required.",
         "provenance": "decided: 100% weighted (D4)"
       },
       {
@@ -524,17 +524,17 @@
       },
       {
         "id": "R101",
-        "text": "System MUST trigger the victory screen immediately when the player enters floor 10 — no additional action (staircase step, enemy elimination) is required; entering floor 10 is itself the win condition; no floor 11 is ever generated.",
+        "text": "System MUST trigger the victory screen immediately when the player enters floor 10 \u2014 no additional action (staircase step, enemy elimination) is required; entering floor 10 is itself the win condition; no floor 11 is ever generated.",
         "provenance": "probe: 100% weighted (D5)"
       },
       {
         "id": "R102",
-        "text": "System MUST render all game visuals — tile glyphs, entity characters, HUD text, and log messages — in green (CSS color #00ff00 or the closest terminal-green equivalent) on a black (#000000) background; no other foreground colors are permitted for any game element, superseding the multi-color clause in FR-012.",
+        "text": "System MUST render all game visuals \u2014 tile glyphs, entity characters, HUD text, and log messages \u2014 in green (CSS color #00ff00 or the closest terminal-green equivalent) on a black (#000000) background; no other foreground colors are permitted for any game element, superseding the multi-color clause in FR-012.",
         "provenance": "probe: 100% weighted (D7)"
       },
       {
         "id": "R103",
-        "text": "System MUST activate all enemies present in a room simultaneously the moment the player's position tile belongs to that room: every enemy in the room begins pursuing and attacking the player on each subsequent turn; enemies do NOT require adjacency or line-of-sight to activate — room entry is the sole trigger.",
+        "text": "System MUST activate all enemies present in a room simultaneously the moment the player's position tile belongs to that room: every enemy in the room begins pursuing and attacking the player on each subsequent turn; enemies do NOT require adjacency or line-of-sight to activate \u2014 room entry is the sole trigger.",
         "provenance": "probe: 100% weighted (D8)"
       }
     ],
@@ -641,46 +641,6 @@
       "review_cycles": 0,
       "worker_runs": 1
     },
-    "T013": {
-      "id": "T013",
-      "issue": 65,
-      "branch": "task/T013",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T014": {
-      "id": "T014",
-      "issue": 66,
-      "branch": "task/T014",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T015": {
-      "id": "T015",
-      "issue": 67,
-      "branch": "task/T015",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T016": {
-      "id": "T016",
-      "issue": 68,
-      "branch": "task/T016",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T017": {
-      "id": "T017",
-      "issue": 69,
-      "branch": "task/T017",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
     "T018": {
       "id": "T018",
       "issue": 36,
@@ -698,71 +658,14 @@
       "review_cycles": 0,
       "worker_runs": 2
     },
-    "T020": {
-      "id": "T020",
-      "issue": 70,
-      "pr": 71,
-      "branch": "task/T020",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T021": {
-      "id": "T021",
-      "issue": 72,
-      "branch": "task/T021",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
     "T022": {
       "id": "T022",
-      "issue": 73,
+      "issue": 74,
       "branch": "task/T022",
       "status": "merged",
       "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T023": {
-      "id": "T023",
-      "issue": 75,
-      "branch": "task/T023",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T024": {
-      "id": "T024",
-      "issue": 76,
-      "branch": "task/T024",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T025": {
-      "id": "T025",
-      "issue": 78,
-      "branch": "task/T025",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T026": {
-      "id": "T026",
-      "issue": 79,
-      "branch": "task/T026",
-      "status": "merged",
-      "review_cycles": 0,
-      "worker_runs": 1
-    },
-    "T027": {
-      "id": "T027",
-      "issue": 80,
-      "pr": 81,
-      "branch": "task/T027",
-      "status": "halted",
-      "review_cycles": 2,
-      "worker_runs": 2
+      "worker_runs": 1,
+      "pr": 77
     },
     "T030": {
       "id": "T030",
