@@ -15,7 +15,7 @@ const Enemy = (() => {
       attack: BASE_ATT[type] + floor * ATT_SCALE[type],
       glyph: GLYPHS[type],
       alive: true,
-      sightRange: CONFIG.enemySightRange
+      activated: false
     };
   }
 
@@ -68,14 +68,30 @@ const Enemy = (() => {
     return true;
   }
 
+  function activateRoomEnemies(gameState) {
+    const { player, dungeon, enemies } = gameState;
+    const playerRoom = dungeon.rooms.find(r =>
+      player.x >= r.x && player.x < r.x + r.width &&
+      player.y >= r.y && player.y < r.y + r.height
+    );
+    if (!playerRoom) return;
+    for (const enemy of enemies) {
+      if (!enemy.activated &&
+          enemy.x >= playerRoom.x && enemy.x < playerRoom.x + playerRoom.width &&
+          enemy.y >= playerRoom.y && enemy.y < playerRoom.y + playerRoom.height) {
+        enemy.activated = true;
+      }
+    }
+  }
+
   function ai(enemy, gameState) {
     if (!enemy.alive) return;
+    if (!enemy.activated) return;
+
     const player = gameState.player;
     const absDx = Math.abs(player.x - enemy.x);
     const absDy = Math.abs(player.y - enemy.y);
     const dist = Math.max(absDx, absDy);
-
-    if (dist > enemy.sightRange) return;
 
     if (dist === 1) {
       if (typeof Combat !== 'undefined' && Combat.enemyAttack) {
@@ -93,7 +109,7 @@ const Enemy = (() => {
     }
   }
 
-  return { placeForFloor, ai };
+  return { placeForFloor, ai, activateRoomEnemies };
 })();
 
 function processEnemyPhase(gameState) {

@@ -47,6 +47,10 @@ document.addEventListener('keydown', (e) => {
   e.preventDefault();
   Player.move(delta[0], delta[1], GameState);
 
+  if (typeof Enemy !== 'undefined' && Enemy.activateRoomEnemies) {
+    Enemy.activateRoomEnemies(GameState);
+  }
+
   if (typeof processEnemyPhase === 'function') {
     processEnemyPhase(GameState);
   }
