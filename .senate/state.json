@@ -765,9 +765,9 @@
       "issue": 92,
       "pr": 94,
       "branch": "task/T028",
-      "status": "in_review",
-      "review_cycles": 0,
-      "worker_runs": 1
+      "status": "halted",
+      "review_cycles": 2,
+      "worker_runs": 2
     },
     "T029": {
       "id": "T029",
@@ -872,7 +872,7 @@
       "worker_runs": 0
     }
   },
-  "sessions": 128,
+  "sessions": 131,
   "history": [
     {
       "from": "IDLE",
