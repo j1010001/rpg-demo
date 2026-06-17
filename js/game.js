@@ -10,7 +10,6 @@ window.GameState = {
 
 function initGame() {
   GameState.enemies = [];
-  GameState.items = [];
   GameState.phase = 'PLAYING';
   GameState.log = [];
 
@@ -21,6 +20,8 @@ function initGame() {
   if (typeof Enemy !== 'undefined' && Enemy.placeForFloor) {
     Enemy.placeForFloor(GameState.dungeon, GameState.player.floor);
   }
+
+  GameState.items = [];
   if (typeof Items !== 'undefined' && Items.placeForFloor) {
     Items.placeForFloor(GameState.dungeon, GameState.player.floor);
   }
