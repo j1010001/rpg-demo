@@ -706,6 +706,7 @@
     "T021": {
       "id": "T021",
       "issue": 86,
+      "pr": 87,
       "branch": "task/T021",
       "status": "in_review",
       "review_cycles": 0,
@@ -769,7 +770,7 @@
       "worker_runs": 1
     }
   },
-  "sessions": 111,
+  "sessions": 112,
   "history": [
     {
       "from": "IDLE",
