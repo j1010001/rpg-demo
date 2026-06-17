@@ -1,5 +1,5 @@
 {
-  "phase": "PROBE_LIVE",
+  "phase": "FEEDBACK",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -225,24 +225,22 @@
       "dimension": "D3",
       "title": "Fog-of-War Sight Radius",
       "stakes": "MED",
-      "winner": "c",
-      "winner_label": "7 tiles (wide / tactical)",
-      "weighted_pct": 50,
-      "status": "conflict",
+      "winner": "b",
+      "winner_label": "5 tiles (balanced / standard roguelike)",
+      "weighted_pct": 100,
+      "status": "decided",
       "by_choice": {
-        "a": 30,
-        "b": 20,
-        "c": 50
+        "b": 100
       },
       "votes": {
-        "alice": "c",
-        "bob": "a",
+        "alice": "b",
+        "bob": "b",
         "carol": "b"
       },
       "sources": {
-        "alice": "proxy",
-        "bob": "proxy",
-        "carol": "proxy"
+        "alice": "human",
+        "bob": "human",
+        "carol": "human"
       }
     },
     {
@@ -271,23 +269,22 @@
       "dimension": "D5",
       "title": "Victory Condition on Floor 10",
       "stakes": "MED",
-      "winner": "a",
-      "winner_label": "Step on staircase tile on floor 10 → victory screen (no floor 11)",
-      "weighted_pct": 50,
-      "status": "conflict",
+      "winner": "c",
+      "winner_label": "Entering floor 10 is itself the win condition",
+      "weighted_pct": 100,
+      "status": "decided",
       "by_choice": {
-        "a": 50,
-        "b": 50
+        "c": 100
       },
       "votes": {
-        "alice": "b",
-        "bob": "a",
-        "carol": "a"
+        "alice": "c",
+        "bob": "c",
+        "carol": "c"
       },
       "sources": {
-        "alice": "proxy",
-        "bob": "proxy",
-        "carol": "proxy"
+        "alice": "human",
+        "bob": "human",
+        "carol": "human"
       }
     },
     {
@@ -319,7 +316,7 @@
       "winner": "a",
       "winner_label": "Green-on-black (classic terminal)",
       "weighted_pct": 100,
-      "status": "deferred",
+      "status": "decided",
       "by_choice": {
         "a": 100
       },
@@ -329,32 +326,31 @@
         "carol": "a"
       },
       "sources": {
-        "alice": "recommendation",
-        "bob": "recommendation",
-        "carol": "proxy"
+        "alice": "human",
+        "bob": "human",
+        "carol": "human"
       }
     },
     {
       "dimension": "D8",
       "title": "Enemy Engagement Rule",
       "stakes": "MED",
-      "winner": "a",
-      "winner_label": "Adjacency-only: combat on move-onto-adjacent-tile",
-      "weighted_pct": 50,
-      "status": "conflict",
+      "winner": "b",
+      "winner_label": "Room-wide aggro: all room enemies activate on player entry",
+      "weighted_pct": 100,
+      "status": "decided",
       "by_choice": {
-        "a": 50,
-        "b": 50
+        "b": 100
       },
       "votes": {
         "alice": "b",
-        "bob": "a",
-        "carol": "a"
+        "bob": "b",
+        "carol": "b"
       },
       "sources": {
-        "alice": "proxy",
-        "bob": "proxy",
-        "carol": "proxy"
+        "alice": "human",
+        "bob": "human",
+        "carol": "human"
       }
     }
   ],
@@ -467,6 +463,83 @@
   "feedback_issue": 58,
   "probe_url": "https://j1010001.github.io/rpg-demo/",
   "delta_loops": 0,
+  "delta_aggregate": {
+    "results": [
+      {
+        "dimension": "D3",
+        "winner": "b",
+        "weighted_pct": 100,
+        "status": "decided"
+      },
+      {
+        "dimension": "D5",
+        "winner": "c",
+        "weighted_pct": 100,
+        "status": "decided"
+      },
+      {
+        "dimension": "D7",
+        "winner": "a",
+        "weighted_pct": 100,
+        "status": "decided"
+      },
+      {
+        "dimension": "D8",
+        "winner": "b",
+        "weighted_pct": 100,
+        "status": "decided"
+      }
+    ],
+    "clarifications": [
+      {
+        "question": "Fog-of-War Sight Radius",
+        "answer": "5 tiles (balanced / standard roguelike)",
+        "weighted_pct": 100,
+        "provenance": "D3"
+      },
+      {
+        "question": "Victory Condition on Floor 10",
+        "answer": "Entering floor 10 is itself the win condition",
+        "weighted_pct": 100,
+        "provenance": "D5"
+      },
+      {
+        "question": "Terminal Color Palette",
+        "answer": "Green-on-black (classic terminal)",
+        "weighted_pct": 100,
+        "provenance": "D7"
+      },
+      {
+        "question": "Enemy Engagement Rule",
+        "answer": "Room-wide aggro: all room enemies activate on player entry",
+        "weighted_pct": 100,
+        "provenance": "D8"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R100",
+        "text": "System MUST apply a fog-of-war sight radius of exactly 5 tiles: tiles within a Chebyshev (or equivalent grid) distance of 5 from the player's current position are fully lit; tiles beyond distance 5 that have been previously visited are rendered dimmed; tiles beyond distance 5 that have never been visited remain hidden.",
+        "provenance": "probe: 100% weighted (D3)"
+      },
+      {
+        "id": "R101",
+        "text": "System MUST trigger the victory screen immediately when the player enters floor 10 — no additional action (staircase step, enemy elimination) is required; entering floor 10 is itself the win condition; no floor 11 is ever generated.",
+        "provenance": "probe: 100% weighted (D5)"
+      },
+      {
+        "id": "R102",
+        "text": "System MUST render all game visuals — tile glyphs, entity characters, HUD text, and log messages — in green (CSS color #00ff00 or the closest terminal-green equivalent) on a black (#000000) background; no other foreground colors are permitted for any game element, superseding the multi-color clause in FR-012.",
+        "provenance": "probe: 100% weighted (D7)"
+      },
+      {
+        "id": "R103",
+        "text": "System MUST activate all enemies present in a room simultaneously the moment the player's position tile belongs to that room: every enemy in the room begins pursuing and attacking the player on each subsequent turn; enemies do NOT require adjacency or line-of-sight to activate — room entry is the sole trigger.",
+        "provenance": "probe: 100% weighted (D8)"
+      }
+    ],
+    "deferred": []
+  },
   "tasks": {
     "T001": {
       "id": "T001",
@@ -772,7 +845,7 @@
       "worker_runs": 1
     }
   },
-  "sessions": 76,
+  "sessions": 77,
   "history": [
     {
       "from": "IDLE",
@@ -827,6 +900,12 @@
       "to": "PROBE_LIVE",
       "at": "2026-06-17T12:31:01.578051Z",
       "note": "probe live at https://j1010001.github.io/rpg-demo/, feedback issue #58"
+    },
+    {
+      "from": "PROBE_LIVE",
+      "to": "FEEDBACK",
+      "at": "2026-06-17T12:53:39.282096Z",
+      "note": "round 1: 4 delta requirements"
     }
   ]
 }
