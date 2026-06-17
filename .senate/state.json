@@ -778,10 +778,11 @@
     "T029": {
       "id": "T029",
       "issue": 99,
+      "pr": 103,
       "branch": "task/T029",
-      "status": "pending",
-      "review_cycles": 0,
-      "worker_runs": 1
+      "status": "merged",
+      "review_cycles": 1,
+      "worker_runs": 2
     },
     "T030": {
       "id": "T030",
@@ -875,7 +876,7 @@
     },
     "T042": {
       "id": "T042",
-      "status": "pending",
+      "status": "merged",
       "review_cycles": 0,
       "worker_runs": 0
     },
@@ -886,7 +887,7 @@
       "worker_runs": 0
     }
   },
-  "sessions": 139,
+  "sessions": 142,
   "history": [
     {
       "from": "IDLE",
