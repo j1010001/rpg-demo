@@ -777,9 +777,11 @@
     },
     "T029": {
       "id": "T029",
+      "issue": 99,
+      "branch": "task/T029",
       "status": "pending",
       "review_cycles": 0,
-      "worker_runs": 0
+      "worker_runs": 1
     },
     "T030": {
       "id": "T030",
@@ -843,9 +845,12 @@
     },
     "T038": {
       "id": "T038",
-      "status": "pending",
+      "issue": 98,
+      "pr": 100,
+      "branch": "task/T038",
+      "status": "in_review",
       "review_cycles": 0,
-      "worker_runs": 0
+      "worker_runs": 1
     },
     "T039": {
       "id": "T039",
@@ -878,7 +883,7 @@
       "worker_runs": 0
     }
   },
-  "sessions": 134,
+  "sessions": 137,
   "history": [
     {
       "from": "IDLE",
