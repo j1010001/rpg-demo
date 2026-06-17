@@ -750,9 +750,12 @@
     },
     "T026": {
       "id": "T026",
-      "status": "pending",
+      "issue": 95,
+      "pr": 96,
+      "branch": "task/T026",
+      "status": "in_review",
       "review_cycles": 0,
-      "worker_runs": 0
+      "worker_runs": 1
     },
     "T027": {
       "id": "T027",
@@ -872,7 +875,7 @@
       "worker_runs": 0
     }
   },
-  "sessions": 131,
+  "sessions": 133,
   "history": [
     {
       "from": "IDLE",
