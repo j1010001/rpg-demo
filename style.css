@@ -175,3 +175,18 @@ body {
   color: #888;
   font-size: 12px;
 }
+
+.inv-content {
+  text-align: left;
+  min-width: 320px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.inv-section {
+  margin-top: 10px;
+  color: #888;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
