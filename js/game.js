@@ -38,6 +38,38 @@ const KEY_MAP = {
   ArrowRight: [1, 0], d: [1, 0], D: [1, 0]
 };
 
+function descend(gameState) {
+  const { player, config } = gameState;
+
+  if (player.floor >= config.maxFloors) {
+    gameState.phase = 'VICTORY';
+    UI.showVictory(gameState);
+    return;
+  }
+
+  player.floor++;
+  player.level = player.floor;
+
+  gameState.dungeon = Dungeon.generate(config, player.floor);
+  gameState.enemies = [];
+  gameState.items = [];
+
+  if (typeof Enemy !== 'undefined' && Enemy.placeForFloor) {
+    Enemy.placeForFloor(gameState.dungeon, player.floor);
+  }
+  if (typeof Items !== 'undefined' && Items.placeForFloor) {
+    Items.placeForFloor(gameState.dungeon, player.floor);
+  }
+
+  const startRoom = gameState.dungeon.rooms[0];
+  player.x = Math.floor(startRoom.x + startRoom.width / 2);
+  player.y = Math.floor(startRoom.y + startRoom.height / 2);
+
+  FOV.compute(gameState);
+  Renderer.render(gameState);
+  UI.render(gameState);
+}
+
 document.addEventListener('keydown', (e) => {
   if (GameState.phase !== 'PLAYING') return;
 
@@ -54,6 +86,12 @@ document.addEventListener('keydown', (e) => {
   if (GameState.player.hp <= 0) {
     GameState.phase = 'GAME_OVER';
     UI.showGameOver(GameState);
+    return;
+  }
+
+  const tile = GameState.dungeon.tiles[GameState.player.y][GameState.player.x];
+  if (tile && tile.type === TILE_TYPES.STAIR_DOWN) {
+    descend(GameState);
     return;
   }
 
