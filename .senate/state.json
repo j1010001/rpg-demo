@@ -1,5 +1,5 @@
 {
-  "phase": "ANALYZED",
+  "phase": "BUILDING",
   "backend": "real",
   "repo_name": "rpg-demo",
   "repo_slug": "j1010001/rpg-demo",
@@ -918,6 +918,12 @@
       "to": "ANALYZED",
       "at": "2026-06-17T15:55:10.42645Z",
       "note": "delta 1 ratified + analyzed"
+    },
+    {
+      "from": "ANALYZED",
+      "to": "BUILDING",
+      "at": "2026-06-17T15:55:10.465955Z",
+      "note": "dispatch started"
     }
   ]
 }
