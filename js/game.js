@@ -31,6 +31,16 @@ function initGame() {
   UI.render(GameState);
 }
 
+function processEnemyPhase(gameState) {
+  if (typeof Enemy === 'undefined') return;
+  Enemy.activateRoomEnemies(gameState);
+  const snapshot = [...gameState.enemies];
+  for (const enemy of snapshot) {
+    if (enemy.alive) Enemy.ai(enemy, gameState);
+  }
+  gameState.enemies = gameState.enemies.filter(e => e.alive);
+}
+
 const KEY_MAP = {
   ArrowUp: [0, -1], w: [0, -1], W: [0, -1],
   ArrowDown: [0, 1], s: [0, 1], S: [0, 1],
